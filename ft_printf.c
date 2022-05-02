@@ -23,7 +23,7 @@ static int	diverge_by_FS(va_list ap, int *res)
 		*res += ft_write_x(ap);
 	else if (*(char *)ap == "X") // " uppercase
 		*res += ft_write_X(ap);
-	else if (*(char *)ap == "%") // percent sign
+	else if (*(char *)ap == "\%") // percent sign
 		*res += ft_write_per(ap);
 	else
 	{
@@ -55,5 +55,5 @@ int	ft_printf(const char *str, ...)
 			print_warning();
 		i = i + 2;
 	}
-	return (0);
+	return (res);
 }
