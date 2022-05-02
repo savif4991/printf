@@ -7,7 +7,7 @@ int main()
 	void	*ptr = &a;
 	write(1, ptr, 4);
 	write(1, "\n", 1);
-	printf("%p\n", ptr);
+	printf("%lu\n", sizeof(ptr));
 	//printf("There are %k fruits.\n", 10);
 	return (0);
 }

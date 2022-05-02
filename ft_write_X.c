@@ -13,7 +13,7 @@ static char	*convert_to_hex(unsigned long long val)
 		return (0);
 	ft_memset(res, '0', 15);
 	res[14] = '\0';
-	hexbase = "0123456789abcdef";
+	hexbase = "0123456789ABCDEF";
 	quo = val;
 	i = 0;
 	while (quo != 0)
@@ -26,7 +26,7 @@ static char	*convert_to_hex(unsigned long long val)
 	return (res);
 }
 
-void	ft_write_x(va_list ap)
+void	ft_write_X(va_list ap)
 {
 	ft_putstr_fd(convert_to_hex(va_arg(ap, void *)), 1);
 }
