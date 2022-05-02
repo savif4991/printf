@@ -1,6 +1,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-#include <stdarg.h>
+# include "./libft/libft.h"
+# include <stdarg.h>
 
 void	ft_write_c(va_list ap);
 void	ft_write_s(va_list ap);
