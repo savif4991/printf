@@ -1,30 +1,29 @@
-#include "./libft/libft.h"
-#include "./ft_printf.h"
+#include "ft_printf.h"
 
 static void	print_warning()
 {
 	write(1, "WARNING\n", 9);
 }
 
-static int	diverge_by_FD(va_list ap, char *adr)
+static int	diverge_by_FS(va_list ap)
 {
-	if (*adr == "c") // single character
+	if (*(char *)ap == "c") // single character
 		ft_write_c(ap);
-	else if (*adr == "s") // string
+	else if (*(char *)ap == "s") // string
 		ft_write_s(ap);
-	else if (*adr == "p") // void * pointer has to be printed in hex
+	else if (*(char *)ap == "p") // void * pointer has to be printed in hex
 		ft_write_p(ap);
-	else if (*adr == "d") // decimal
+	else if (*(char *)ap == "d") // decimal
 		ft_write_d(ap);
-	else if (*adr == "i") // interger in base 10
+	else if (*(char *)ap == "i") // interger in base 10
 		ft_write_i(ap);
-	else if (*adr == "u") // unsigned decimal in base 10
+	else if (*(char *)ap == "u") // unsigned decimal in base 10
 		ft_write_u(ap);
-	else if (*adr == "x") // hex in base 16 lowercase
+	else if (*(char *)ap == "x") // hex in base 16 lowercase
 		ft_write_x(ap);
-	else if (*adr == "X") // " uppercase
+	else if (*(char *)ap == "X") // " uppercase
 		ft_write_X(ap);
-	else if (*adr == "%") // percent sign
+	else if (*(char *)ap == "%") // percent sign
 		ft_write_per(ap);
 	else
 	{
@@ -35,17 +34,23 @@ static int	diverge_by_FD(va_list ap, char *adr)
 
 int	ft_printf(const char *str, ...)
 {
-	char			*adr;
 	va_list			ap;
+	unsigned int	i;
 
+	i = 0;
 	while (1)
 	{
-		adr = ft_strchr(str, "%");
-		if (adr == 0)
-			break ;
-		va_start(ap, adr);
-		if (diverge_by_FD(ap, adr) == 1)
+		while (str[i] != "%")
+		{
+			ft_putchar_fd(str[i], 1);
+			i++;
+			if (str[i] == '\0')
+				return (0);
+		}
+		va_start(ap, &str[i]);
+		if (diverge_by_FS(ap) == 1)
 			print_warning();
+		i = i + 2;
 	}
 	return (0);
 }
