@@ -5,26 +5,26 @@ static void	print_warning()
 	write(1, "WARNING\n", 9);
 }
 
-static int	diverge_by_FS(va_list ap)
+static int	diverge_by_FS(va_list ap, int *res)
 {
 	if (*(char *)ap == "c") // single character
-		ft_write_c(ap);
+		*res += ft_write_c(ap);
 	else if (*(char *)ap == "s") // string
-		ft_write_s(ap);
+		*res += ft_write_s(ap);
 	else if (*(char *)ap == "p") // void * pointer has to be printed in hex
-		ft_write_p(ap);
+		*res += ft_write_p(ap);
 	else if (*(char *)ap == "d") // decimal
-		ft_write_d(ap);
+		*res += ft_write_d(ap);
 	else if (*(char *)ap == "i") // interger in base 10
-		ft_write_i(ap);
+		*res += ft_write_i(ap);
 	else if (*(char *)ap == "u") // unsigned decimal in base 10
-		ft_write_u(ap);
+		*res += ft_write_u(ap);
 	else if (*(char *)ap == "x") // hex in base 16 lowercase
-		ft_write_x(ap);
+		*res += ft_write_x(ap);
 	else if (*(char *)ap == "X") // " uppercase
-		ft_write_X(ap);
+		*res += ft_write_X(ap);
 	else if (*(char *)ap == "%") // percent sign
-		ft_write_per(ap);
+		*res += ft_write_per(ap);
 	else
 	{
 		ft_write_c(ap);
@@ -36,19 +36,22 @@ int	ft_printf(const char *str, ...)
 {
 	va_list			ap;
 	unsigned int	i;
+	int				res;
 
 	i = 0;
+	res = 0;
 	while (1)
 	{
 		while (str[i] != "%")
 		{
 			ft_putchar_fd(str[i], 1);
+			res++;
 			i++;
 			if (str[i] == '\0')
 				return (0);
 		}
 		va_start(ap, &str[i]);
-		if (diverge_by_FS(ap) == 1)
+		if (diverge_by_FS(ap, &res) == 1)
 			print_warning();
 		i = i + 2;
 	}

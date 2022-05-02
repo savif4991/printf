@@ -1,6 +1,19 @@
 #include "./ft_printf.h"
 
-void	ft_write_i(va_list ap)
+int	ft_write_i(va_list ap)
 {
-	write(1, va_arg(ap, int), sizeof(int));
+	int	val;
+	int	quo;
+	int	dig;
+
+	val = va_arg(ap, int);
+	dig = 0;
+	quo = val;
+	while (quo != 0)
+	{
+		quo /= 10;
+		dig++;
+	}
+	write(1, &val, sizeof(int));
+	return (dig);
 }

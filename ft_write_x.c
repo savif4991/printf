@@ -1,32 +1,37 @@
 #include "./ft_printf.h"
 
-static char	*convert_to_hex(unsigned long long val)
+static char	*convert_to_hex(unsigned long long val, int *dig)
 {
-	char			*hexbase;
 	char			*res;
 	unsigned int	rem;
 	unsigned int	quo;
 	unsigned int	i;
 
-	res = (char *)malloc(15 * sizeof(char));
-	if (res == 0)
-		return (0);
-	ft_memset(res, '0', 15);
-	res[14] = '\0';
-	hexbase = "0123456789abcdef";
 	quo = val;
-	i = 0;
 	while (quo != 0)
 	{
-		rem = quo % 16;
 		quo /= 16;
-		res[14 - i] = hexbase[rem];
+		*dig++;
+	}
+	res = (char *)malloc((*dig + 1) * sizeof(char));
+	if (res == 0)
+		return (0);
+	res[*dig] = '\0';
+	i = 1;
+	while (val != 0)
+	{
+		rem = val % 16;
+		val /= 16;
+		res[*dig - i] = "0123456789abcdef"[rem];
 		i++;
 	}
 	return (res);
 }
 
-void	ft_write_x(va_list ap)
+int	ft_write_x(va_list ap)
 {
-	ft_putstr_fd(convert_to_hex(va_arg(ap, void *)), 1);
+	int	dig;
+	dig = 0;
+	ft_putstr_fd(convert_to_hex(va_arg(ap, void *), &dig), 1);
+	return (dig);
 }
