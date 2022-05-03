@@ -14,6 +14,6 @@ int	ft_write_u(va_list ap)
 		quo /= 10;
 		dig++;
 	}
-	write(1, val, sizeof(unsigned int));
+	write(1, &val, sizeof(unsigned int));
 	return (dig);
 }

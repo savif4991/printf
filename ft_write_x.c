@@ -32,6 +32,6 @@ int	ft_write_x(va_list ap)
 {
 	int	dig;
 	dig = 0;
-	ft_putstr_fd(convert_to_hex(va_arg(ap, void *), &dig), 1);
+	ft_putstr_fd(convert_to_hex(va_arg(ap, unsigned long long), &dig), 1);
 	return (dig);
 }

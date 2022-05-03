@@ -7,23 +7,23 @@ static void	print_warning()
 
 static int	diverge_by_FS(va_list ap, int *res)
 {
-	if (*(char *)ap == "c") // single character
+	if (*(char *)ap == 'c') // single character
 		*res += ft_write_c(ap);
-	else if (*(char *)ap == "s") // string
+	else if (*(char *)ap == 's') // string
 		*res += ft_write_s(ap);
-	else if (*(char *)ap == "p") // void * pointer has to be printed in hex
+	else if (*(char *)ap == 'p') // void * pointer has to be printed in hex
 		*res += ft_write_p(ap);
-	else if (*(char *)ap == "d") // decimal
+	else if (*(char *)ap == 'd') // decimal
 		*res += ft_write_d(ap);
-	else if (*(char *)ap == "i") // interger in base 10
+	else if (*(char *)ap == 'i') // interger in base 10
 		*res += ft_write_i(ap);
-	else if (*(char *)ap == "u") // unsigned decimal in base 10
+	else if (*(char *)ap == 'u') // unsigned decimal in base 10
 		*res += ft_write_u(ap);
-	else if (*(char *)ap == "x") // hex in base 16 lowercase
+	else if (*(char *)ap == 'x') // hex in base 16 lowercase
 		*res += ft_write_x(ap);
-	else if (*(char *)ap == "X") // " uppercase
+	else if (*(char *)ap == 'X') // " uppercase
 		*res += ft_write_X(ap);
-	else if (*(char *)ap == "\%") // percent sign
+	else if (*(char *)ap == '\%') // percent sign
 		*res += ft_write_per(ap);
 	else
 	{
@@ -42,7 +42,7 @@ int	ft_printf(const char *str, ...)
 	res = 0;
 	while (1)
 	{
-		while (str[i] != "%")
+		while (str[i] != '%')
 		{
 			ft_putchar_fd(str[i], 1);
 			res++;
