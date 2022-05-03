@@ -30,8 +30,11 @@ static char	*convert_to_hex(unsigned long long val, int *dig)
 
 int	ft_write_x(va_list ap)
 {
-	int	dig;
+	int					dig;
+	unsigned long long	val;
+
 	dig = 0;
-	ft_putstr_fd(convert_to_hex(va_arg(ap, unsigned long long), &dig), 1);
+	val = va_arg(ap, unsigned long long);
+	ft_putstr_fd(convert_to_hex(val, &dig), 1);
 	return (dig);
 }

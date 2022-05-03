@@ -2,18 +2,36 @@
 
 int	ft_write_i(va_list ap)
 {
-	int	val;
-	int	quo;
-	int	dig;
+	int				val;
+	int				quo;
+	int				dig;
+	int				sign;
+	char			*str;
 
+	sign = 1;
 	val = va_arg(ap, int);
-	dig = 0;
-	quo = val;
-	while (quo != 0)
+	if (val < 0)
 	{
-		quo /= 10;
-		dig++;
+		val *= -1;
+		sign = -1;
 	}
-	write(1, &val, sizeof(int));
+	dig = 1;
+	quo = val;
+	while (quo /= 10)
+		dig++;
+	if (sign == -1)
+		dig++;
+	str = (char *)malloc(sizeof(char) * (dig + 1));
+	if (str == 0)
+		return (0);
+	str[dig] = 0;
+	while (val)
+	{
+		str[--dig] = val % 10 + '0';
+		val /= 10;
+	}
+	if (sign == -1)
+		str[0] = '-';
+	write(1, str, sizeof(char) * (dig + 1));
 	return (dig);
 }

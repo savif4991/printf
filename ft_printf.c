@@ -1,35 +1,36 @@
 #include "ft_printf.h"
+#include <stdio.h>
 
 static void	print_warning()
 {
 	write(1, "WARNING\n", 9);
 }
 
-static int	diverge_by_FS(va_list ap, int *res)
+static int	diverge_by_FS(va_list ap, int *res, char *str)
 {
-	if (*(char *)ap == 'c') // single character
+	//write(1, ap, sizeof(ap));
+	//write(1, " is ap value.\n", 15);
+	if (*str == 'c') // single character
 		*res += ft_write_c(ap);
-	else if (*(char *)ap == 's') // string
+	else if (*str == 's') // string
 		*res += ft_write_s(ap);
-	else if (*(char *)ap == 'p') // void * pointer has to be printed in hex
+	else if (*str == 'p') // void * pointer has to be printed in hex
 		*res += ft_write_p(ap);
-	else if (*(char *)ap == 'd') // decimal
+	else if (*str == 'd') // decimal
 		*res += ft_write_d(ap);
-	else if (*(char *)ap == 'i') // interger in base 10
+	else if (*str == 'i') // interger in base 10
 		*res += ft_write_i(ap);
-	else if (*(char *)ap == 'u') // unsigned decimal in base 10
+	else if (*str == 'u') // unsigned decimal in base 10
 		*res += ft_write_u(ap);
-	else if (*(char *)ap == 'x') // hex in base 16 lowercase
+	else if (*str == 'x') // hex in base 16 lowercase
 		*res += ft_write_x(ap);
-	else if (*(char *)ap == 'X') // " uppercase
+	else if (*str == 'X') // " uppercase
 		*res += ft_write_X(ap);
-	else if (*(char *)ap == '\%') // percent sign
+	else if (*str == '\%') // percent sign
 		*res += ft_write_per(ap);
 	else
-	{
-		ft_write_c(ap);
 		return (1);
-	}
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
@@ -40,20 +41,21 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	res = 0;
-	while (1)
+	va_start(ap, str);
+	while (str[i])
 	{
-		while (str[i] != '%')
+		while (str[i] != '\%')
 		{
 			ft_putchar_fd(str[i], 1);
 			res++;
 			i++;
 			if (str[i] == '\0')
-				return (0);
+				return (res);
 		}
-		va_start(ap, &str[i]);
-		if (diverge_by_FS(ap, &res) == 1)
+		i++;
+		if (diverge_by_FS(ap, &res, &str[i]) == 1)
 			print_warning();
-		i = i + 2;
+		i++;
 	}
 	return (res);
 }
