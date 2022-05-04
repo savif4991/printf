@@ -1,4 +1,5 @@
 #include "./ft_printf.h"
+#include <stdio.h>
 
 static char	*convert_to_hex(unsigned long long val)
 {
@@ -7,6 +8,7 @@ static char	*convert_to_hex(unsigned long long val)
 	unsigned int	i;
 
 	res = (char *)malloc(15 * sizeof(char));
+	ft_memset (res, '0', 15);
 	if (res == 0)
 		return (0);
 	res[14] = '\0';
