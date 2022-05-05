@@ -1,12 +1,14 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
+//gcc -o test.a main.c -L. -l ftprintf
+
 static void	print_warning()
 {
 	write(1, "WARNING\n", 9);
 }
 
-static int	diverge_by_FS(va_list ap, int *res, char *str)
+static int	diverge_by_FS(va_list ap, int *res, const char *str)
 {
 	//write(1, ap, sizeof(ap));
 	//write(1, " is ap value.\n", 15);
