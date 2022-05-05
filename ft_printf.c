@@ -3,15 +3,8 @@
 
 //gcc -o test.a main.c -L. -l ftprintf
 
-static void	print_warning()
-{
-	write(1, "WARNING\n", 9);
-}
-
 static int	diverge_by_FS(va_list ap, int *res, const char *str)
 {
-	//write(1, ap, sizeof(ap));
-	//write(1, " is ap value.\n", 15);
 	if (*str == 'c') // single character
 		*res += ft_write_c(ap);
 	else if (*str == 's') // string
@@ -35,6 +28,19 @@ static int	diverge_by_FS(va_list ap, int *res, const char *str)
 	return (0);
 }
 
+static unsigned int	count_per(const char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] == '\%')
+		i++;
+	if (i % 2 == 0)
+		return (1);
+	else
+		return (0);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	va_list			ap;
@@ -54,9 +60,29 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '\0')
 				return (res);
 		}
-		i++;
-		if (diverge_by_FS(ap, &res, &str[i]) == 1)
-			print_warning();
+		if (count_per(&str[i]) == 1)
+		{
+			while (str[i] == '\%' && str[i + 1] == '\%')
+			{
+				ft_putchar_fd(str[i], 1);
+				res++;
+				i++;
+				if (str[i] == '\0')
+					return (res);
+			}
+			ft_putchar_fd(str[++i], 1);
+			res++;
+		}
+		else
+		{
+			while (str[i] == '\%' && str[i + 1] == '\%')
+			{
+				ft_putchar_fd(str[i], 1);
+				res++;
+				i++;
+			}
+			diverge_by_FS(ap, &res, &str[++i]);
+		}
 		i++;
 	}
 	return (res);

@@ -51,5 +51,10 @@ int main()
 	ret_val = ft_printf("ft_printf result is %u, %u ", u1, u2);
 	printf("and ret val is %d\n", ret_val);
 
+	ret_val = printf("___printf result is %%u, %u ", u2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %%u, %u ", u2);
+	printf("and ret val is %d\n", ret_val);
+
 	return (0);
 }
