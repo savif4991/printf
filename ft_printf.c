@@ -83,7 +83,7 @@ int	ft_printf(const char *str, ...)
 	}
 	return (res);
 }
-
+/*
 int main()
 {
 	int		ret_val;
@@ -95,8 +95,8 @@ int main()
 	ret_val = ft_printf("ft_printf result is %c, %c ", c1, c2);
 	printf("and ret val is %d\n", ret_val);
 
-	int		i1 = 1;
-	int		i2 = -2;
+	int		i1 = 100;
+	int		i2 = -200;
 	ret_val = printf("___printf result is %d, %d ", i1, i2);
 	printf("and ret val is %d\n", ret_val);
 	ret_val = ft_printf("ft_printf result is %d, %d ", i1, i2);
@@ -141,3 +141,4 @@ int main()
 
 	return (0);
 }
+*/

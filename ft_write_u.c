@@ -22,6 +22,6 @@ int	ft_write_u(va_list ap)
 		str[--temp] = val % 10 + '0';
 		val /= 10;
 	}
-	write(1, str, sizeof(char) * (dig + 1));
+	ft_putstr_fd(str, 1);
 	return (dig);
 }
