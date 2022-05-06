@@ -35,10 +35,7 @@ static unsigned int	count_per(const char *str)
 	i = 0;
 	while (str[i] == '\%')
 		i++;
-	if (i % 2 == 0)
-		return (1);
-	else
-		return (0);
+	return (i);
 }
 
 int	ft_printf(const char *str, ...)
@@ -46,6 +43,7 @@ int	ft_printf(const char *str, ...)
 	va_list			ap;
 	unsigned int	i;
 	int				res;
+	unsigned int	count;
 
 	i = 0;
 	res = 0;
@@ -60,30 +58,86 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '\0')
 				return (res);
 		}
-		if (count_per(&str[i]) == 1)
+		if ((count_per(&str[i]) % 2) == 0) //printf 작동 X
+		{
+			count = (count_per(&str[i]) / 2);
+			while (count)
+			{
+				i = i + 2;
+				ft_putchar_fd('\%', 1);
+				res++;
+				count--;
+			}
+		}
+		else //printf 작동 O
 		{
 			while (str[i] == '\%' && str[i + 1] == '\%')
 			{
 				ft_putchar_fd(str[i], 1);
 				res++;
 				i++;
-				if (str[i] == '\0')
-					return (res);
-			}
-			ft_putchar_fd(str[++i], 1);
-			res++;
+			} //마지막 %에서 빠져나옴
+			i++;
+			diverge_by_FS(ap, &res, &str[i++]);
 		}
-		else
-		{
-			while (str[i] == '\%' && str[i + 1] == '\%')
-			{
-				ft_putchar_fd(str[i], 1);
-				res++;
-				i++;
-			}
-			diverge_by_FS(ap, &res, &str[++i]);
-		}
-		i++;
 	}
 	return (res);
+}
+
+int main()
+{
+	int		ret_val;
+
+	char	c1 = 'a';
+	char	c2 = 'b';
+	ret_val = printf("___printf result is %c, %c ", c1, c2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %c, %c ", c1, c2);
+	printf("and ret val is %d\n", ret_val);
+
+	int		i1 = 1;
+	int		i2 = -2;
+	ret_val = printf("___printf result is %d, %d ", i1, i2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %d, %d ", i1, i2);
+	printf("and ret val is %d\n", ret_val);
+
+	ret_val = printf("___printf result is %i, %i ", i1, i2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %i, %i ", i1, i2);
+	printf("and ret val is %d\n", ret_val);
+
+	void	*ptr1 = &i1;
+	void	*ptr2 = &i2;
+	ret_val = printf("___printf result is %p, %p ", ptr1, ptr2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %p, %p ", ptr1, ptr2);
+	printf("and ret val is %d\n", ret_val);
+
+	char	per = '%';
+	ret_val = printf("___printf result is %c ", per);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %c ", per);
+	printf("and ret val is %d\n", ret_val);
+
+	char	*str1 = "this is the string.";
+	char	*str2 = "this is the string";
+	ret_val = printf("___printf result is %s, %s ", str1, str2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %s, %s ", str1, str2);
+	printf("and ret val is %d\n", ret_val);
+
+	unsigned int		u1 = 1;
+	unsigned int		u2 = 2;
+	ret_val = printf("___printf result is %u, %u ", u1, u2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %u, %u ", u1, u2);
+	printf("and ret val is %d\n", ret_val);
+
+	ret_val = printf("___printf result is %%%%u, %u ", u2);
+	printf("and ret val is %d\n", ret_val);
+	ret_val = ft_printf("ft_printf result is %%%%u, %u ", u2);
+	printf("and ret val is %d\n", ret_val);
+
+	return (0);
 }
