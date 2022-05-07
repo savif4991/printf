@@ -10,8 +10,8 @@ int	ft_write_p(va_list ap);
 int	ft_write_d(va_list ap);
 int	ft_write_i(va_list ap);
 int	ft_write_u(va_list ap);
-int	ft_write_x(va_list ap);
-int	ft_write_X(va_list ap);
+int	ft_write_lowerx(va_list ap);
+int	ft_write_upperX(va_list ap);
 int	ft_write_per(va_list ap);
 
 #endif

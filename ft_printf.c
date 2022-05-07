@@ -18,9 +18,9 @@ static int	diverge_by_FS(va_list ap, int *res, const char *str)
 	else if (*str == 'u') // unsigned decimal in base 10
 		*res += ft_write_u(ap);
 	else if (*str == 'x') // hex in base 16 lowercase
-		*res += ft_write_x(ap);
+		*res += ft_write_lowerx(ap);
 	else if (*str == 'X') // " uppercase
-		*res += ft_write_X(ap);
+		*res += ft_write_upperX(ap);
 	else if (*str == '\%') // percent sign
 		*res += ft_write_per(ap);
 	else
@@ -63,7 +63,7 @@ int	ft_printf(const char *str, ...)
 			count = (count_per(&str[i]) / 2);
 			while (count)
 			{
-				i = i + 2;
+				i += 2;
 				ft_putchar_fd('\%', 1);
 				res++;
 				count--;
@@ -83,62 +83,3 @@ int	ft_printf(const char *str, ...)
 	}
 	return (res);
 }
-/*
-int main()
-{
-	int		ret_val;
-
-	char	c1 = 'a';
-	char	c2 = 'b';
-	ret_val = printf("___printf result is %c, %c ", c1, c2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %c, %c ", c1, c2);
-	printf("and ret val is %d\n", ret_val);
-
-	int		i1 = 100;
-	int		i2 = -200;
-	ret_val = printf("___printf result is %d, %d ", i1, i2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %d, %d ", i1, i2);
-	printf("and ret val is %d\n", ret_val);
-
-	ret_val = printf("___printf result is %i, %i ", i1, i2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %i, %i ", i1, i2);
-	printf("and ret val is %d\n", ret_val);
-
-	void	*ptr1 = &i1;
-	void	*ptr2 = &i2;
-	ret_val = printf("___printf result is %p, %p ", ptr1, ptr2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %p, %p ", ptr1, ptr2);
-	printf("and ret val is %d\n", ret_val);
-
-	char	per = '%';
-	ret_val = printf("___printf result is %c ", per);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %c ", per);
-	printf("and ret val is %d\n", ret_val);
-
-	char	*str1 = "this is the string.";
-	char	*str2 = "this is the string";
-	ret_val = printf("___printf result is %s, %s ", str1, str2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %s, %s ", str1, str2);
-	printf("and ret val is %d\n", ret_val);
-
-	unsigned int		u1 = 1;
-	unsigned int		u2 = 2;
-	ret_val = printf("___printf result is %u, %u ", u1, u2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %u, %u ", u1, u2);
-	printf("and ret val is %d\n", ret_val);
-
-	ret_val = printf("___printf result is %%%%u, %u ", u2);
-	printf("and ret val is %d\n", ret_val);
-	ret_val = ft_printf("ft_printf result is %%%%u, %u ", u2);
-	printf("and ret val is %d\n", ret_val);
-
-	return (0);
-}
-*/

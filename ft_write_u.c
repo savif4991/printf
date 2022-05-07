@@ -1,27 +1,36 @@
 #include "./ft_printf.h"
 
-int	ft_write_u(va_list ap)
+static char	*ft_uitoa(unsigned int val)
 {
-	int				val;
-	int				temp;
-	int				dig;
+	unsigned int	dig;
+	unsigned int	temp;
 	char			*str;
 
-	val = va_arg(ap, int);
-	dig = 1;
 	temp = val;
+	dig = 1;
 	while (temp /= 10)
 		dig++;
-	str = (char *)malloc(sizeof(char) * (dig + 1));
+	str = (char *)malloc(dig + 1);
 	if (str == 0)
 		return (0);
 	str[dig] = '\0';
-	temp = dig;
-	while (val)
+	while (dig--) //dig의 값으로 조건문이 작동해, 그리고 -1이 연산돼. 그 다음에 실행문이 작동한다. dig-1의 상태로.
 	{
-		str[--temp] = val % 10 + '0';
+		str[dig] = val % 10 + '0';
 		val /= 10;
 	}
+	return (str);
+}
+
+int	ft_write_u(va_list ap)
+{
+	char				*str;
+	unsigned int		val;
+
+	val = va_arg(ap, unsigned int);
+	str = ft_uitoa(val);
 	ft_putstr_fd(str, 1);
-	return (dig);
+	val = ft_strlen(str);
+	free(str);
+	return (val);
 }

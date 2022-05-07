@@ -1,5 +1,4 @@
 #include "./ft_printf.h"
-#include <stdio.h>
 
 static char	*convert_to_hex(unsigned long long val)
 {
@@ -28,9 +27,12 @@ int	ft_write_p(va_list ap)
 	int					dig;
 	unsigned long long	val;
 	void				*ptr;
+	char				*str;
 
 	ptr = va_arg(ap, void *);
 	val = (unsigned long long)ptr;
-	ft_putstr_fd(convert_to_hex(val), 1);
+	str = convert_to_hex(val);
+	ft_putstr_fd(str, 1);
+	free(str);
 	return (14);
 }
