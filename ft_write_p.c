@@ -22,9 +22,8 @@ static char	*convert_to_hex(unsigned long long val)
 	return (res);
 }
 
-int	ft_write_p(va_list ap)
+char	*ft_write_p(va_list ap)
 {
-	int					dig;
 	unsigned long long	val;
 	void				*ptr;
 	char				*str;
@@ -32,7 +31,5 @@ int	ft_write_p(va_list ap)
 	ptr = va_arg(ap, void *);
 	val = (unsigned long long)ptr;
 	str = convert_to_hex(val);
-	ft_putstr_fd(str, 1);
-	free(str);
-	return (14);
+	return (str);
 }

@@ -26,9 +26,8 @@ static char	*convert_to_hex(unsigned long long val)
 	return (res);
 }
 
-int	ft_write_upperX(va_list ap)
+char	*ft_write_upperX(va_list ap)
 {
-	int					res;
 	unsigned long long	val;
 	char				*str;
 
@@ -36,8 +35,5 @@ int	ft_write_upperX(va_list ap)
 	str = convert_to_hex(val);
 	if (str == 0)
 		return (0);
-	ft_putstr_fd(str, 1);
-	res = ft_strlen(str);
-	free(str);
-	return (res);
+	return (str);
 }

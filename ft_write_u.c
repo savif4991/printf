@@ -22,15 +22,12 @@ static char	*ft_uitoa(unsigned int val)
 	return (str);
 }
 
-int	ft_write_u(va_list ap)
+char	*ft_write_u(va_list ap)
 {
 	char				*str;
 	unsigned int		val;
 
 	val = va_arg(ap, unsigned int);
 	str = ft_uitoa(val);
-	ft_putstr_fd(str, 1);
-	val = ft_strlen(str);
-	free(str);
-	return (val);
+	return (str);
 }
