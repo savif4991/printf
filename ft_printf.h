@@ -4,6 +4,12 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);
+char	*process_raw_str(char *raw_str, char spc, char *flag, int width, int precision, int length);
+char	*check_specifier(va_list ap, const char *str);
+int		check_precision(const char *str, va_list ap);
+int		check_length(const char *str);
+int		check_width(const char *str, va_list ap);
+char	*check_flag(const char *str);
 char	*ft_write_c(va_list ap);
 char	*ft_write_s(va_list ap);
 char	*ft_write_p(va_list ap);
