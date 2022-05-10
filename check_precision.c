@@ -13,7 +13,7 @@ int	check_precision(const char *str, va_list ap)
 		else if (str[1] == '*')
 			res = va_arg(ap, int);
 		else
-			res = -1;
+			res = -2;
 	}
 	else
 		res = -1;

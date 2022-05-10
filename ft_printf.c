@@ -1,7 +1,6 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-//gcc -o test.a main.c -L. -l ftprintf
 //%[flags][width][.precision][length]specifier
 
 static unsigned int	count_per(const char *str)
@@ -67,8 +66,10 @@ int	ft_printf(const char *str, ...)
 			if (width != -1)
 				i += ft_strlen(ft_itoa(width));
 			precision = check_precision(&str[i], ap);
-			if (precision != -1)
+			if (precision != -1 && precision != -2)
 				i += ft_strlen(ft_itoa(precision)) + 1;
+			else if (precision == -2)
+				i++;
 			length = check_length(&str[i]);
 			if (length != -1)
 				i++;

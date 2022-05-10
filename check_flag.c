@@ -3,7 +3,7 @@
 static int	check_c_flag(char c)
 {
 	if (c == '-' || c == '+' || c == ' ' || c == '#'
-		|| c == ' ')
+		|| c == '0')
 		return (1);
 	else
 		return (0);
@@ -17,7 +17,7 @@ char	*check_flag(const char *str)
 	i = 0;
 	while (check_c_flag(str[i]))
 		i++;
-	res = (char *)malloc(sizeof(char) * i + 1);
+	res = (char *)malloc(sizeof(char) * (i + 1));
 	if (res == 0)
 		return (0);
 	i = 0;
