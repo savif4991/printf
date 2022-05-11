@@ -1,9 +1,9 @@
 #include "ft_printf.h"
-
+//%1.0d <- int 0
 static char	*get_res(struct s_info *p, unsigned int padding, int raw_strlen, int slots)
 {
 	char	*res;
-
+//width = 1, precision = 0, slots = 1
 	if ((ft_strchr(p->flag, '+') || ft_strchr(p->flag, ' ')) && p->raw_str[0] != '-')
 		slots++; // +, - ' ' 중 하나가 삽입됨
 	if (ft_strchr(p->flag, '#') && ft_strchr("xX", p->spc) && p->raw_str[0] != '0')
@@ -25,7 +25,7 @@ static char	*get_res(struct s_info *p, unsigned int padding, int raw_strlen, int
 	res = (char *)malloc(sizeof(char) * (slots + padding + 1));
 	if (res == 0)
 		return (0);
-	res[slots + padding + 1] = '\0';
+	res[slots + padding] = '\0';
 	return (res);
 }
 
@@ -64,7 +64,9 @@ static void	num_no_padding(struct s_info *p, int raw_strlen)
 		ft_strlcpy(&p->res_str[i], "0X", 3);
 		i += 2;
 	}
-	if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
+	if (p->precision == -2 && p->raw_str[0] == '0')
+		p->res_str[i] = ' ';
+	else if (p->precision == 0 && p->raw_str[0] == '0')
 		p->res_str[i] = '\0';
 	else
 		ft_strlcpy(&p->res_str[i], p->raw_str, raw_strlen + 1);
@@ -139,7 +141,7 @@ char	*process_raw_str(struct s_info *p)
 	int				slots;
 	unsigned int	padding;
 	int				raw_strlen;
-//!! length 는 보류 !!
+	//!! length 는 보류 !!
 	raw_strlen = ft_strlen(p->raw_str);
 	slots = raw_strlen;
 	padding = 0;

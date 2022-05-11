@@ -11,6 +11,17 @@ static unsigned int	count_per(const char *str)
 	return (i);
 }
 
+static void	purge(struct s_info *p)
+{
+	if (p->flag)
+		free(p->flag);
+	if (p->spc != 's')
+		free(p->raw_str);
+	if (p->res_str)
+		free(p->res_str);
+	free(p);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	va_list			ap;
@@ -75,7 +86,7 @@ int	ft_printf(const char *str, ...)
 			p->res_str = process_raw_str(p);
 			ft_putstr_fd(p->res_str, 1);
 			res += ft_strlen(p->res_str);
-			free(p);
+			purge(p);
 		}
 	}
 	return (res);
