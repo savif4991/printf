@@ -3,8 +3,19 @@
 # include "./libft/libft.h"
 # include <stdarg.h>
 
+typedef struct s_info
+{
+	char			spc;
+	char			*flag;
+	int				width;
+	int				precision;
+	int				length;
+	char			*raw_str;
+	char			*res_str;
+}	p;
+
 int		ft_printf(const char *str, ...);
-char	*process_raw_str(char *raw_str, char spc, char *flag, int width, int precision, int length);
+char	*process_raw_str(struct s_info *p);
 char	*check_specifier(va_list ap, const char *str);
 int		check_precision(const char *str, va_list ap);
 int		check_length(const char *str);
