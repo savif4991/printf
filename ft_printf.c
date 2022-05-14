@@ -80,14 +80,42 @@ int	ft_printf(const char *str, ...)
 			if (p->length != -1)
 				i++;
 			p->raw_str = check_specifier(ap, &str[i]);
-			if (p->raw_str == 0)
-				return (0);
 			p->spc = str[i++];
-			p->res_str = process_raw_str(p);
-			ft_putstr_fd(p->res_str, 1);
-			res += ft_strlen(p->res_str);
-			purge(p);
+			if (p->raw_str == 0)
+			{
+				if (p->spc == 's')
+				{
+					ft_putstr_fd("(null)", 1);
+					res += 6;
+				}
+				else if(p->spc == 'p')
+				{
+					ft_putstr_fd("(nil)", 1);
+					res += 5;
+				}
+				free(p->flag);
+				free(p);
+			}
+			else
+			{
+				p->res_str = process_raw_str(p);
+				ft_putstr_fd(p->res_str, 1);
+				res += ft_strlen(p->res_str);
+				if (!p->raw_str[0] && !p->raw_str[1] && p->spc == 'c')
+				{
+					ft_putchar_fd('\0', 1);
+					res += 1;
+				}
+				purge(p);
+			}
 		}
 	}
 	return (res);
 }
+/*
+int main()
+{
+	int test = 42;
+	ft_printf("%p\n", (void *)(long int)test);
+	return (0);
+}*/

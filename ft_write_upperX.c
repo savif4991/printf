@@ -2,11 +2,11 @@
 
 static char	*convert_to_hex(unsigned long long val)
 {
-	char			*res;
-	unsigned int	rem;
-	unsigned int	quo;
-	unsigned int	i;
-	unsigned int	dig;
+	char					*res;
+	unsigned int			rem;
+	unsigned long long int	quo;
+	unsigned int			i;
+	unsigned int			dig;
 
 	quo = val;
 	dig = 1;
@@ -16,6 +16,8 @@ static char	*convert_to_hex(unsigned long long val)
 	if (res == 0)
 		return (0);
 	res[dig] = '\0';
+	if (!val)
+		res[0] = '0';
 	i = 1;
 	while (val)
 	{

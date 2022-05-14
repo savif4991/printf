@@ -2,23 +2,32 @@
 
 static char	*convert_to_hex(unsigned long long val)
 {
-	char			*res;
-	unsigned int	rem;
-	unsigned int	i;
+	char					*res;
+	unsigned int			rem;
+	unsigned long long int	quo;
+	unsigned int			i;
+	unsigned int			dig;
 
-	res = (char *)malloc(15 * sizeof(char));
-	ft_memset (res, '0', 15);
+	if (!val)
+		return (0);
+	quo = val;
+	dig = 1;
+	while (quo /= 16)
+		dig++;
+	dig += 2;
+	res = (char *)malloc((dig + 1) * sizeof(char));
 	if (res == 0)
 		return (0);
-	res[14] = '\0';
-	i = 0;
-	while (val != 0)
+	res[dig] = '\0';
+	i = 1;
+	while (val)
 	{
 		rem = val % 16;
 		val /= 16;
-		res[13 - i] = "0123456789abcdef"[rem];
-		i++;
+		res[dig - i++] = "0123456789abcdef"[rem];
 	}
+	res[0] = '0';
+	res[1] = 'x';
 	return (res);
 }
 
