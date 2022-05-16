@@ -28,6 +28,7 @@ int	ft_printf(const char *str, ...)
 	unsigned int	i;
 	int				res;
 	unsigned int	per_count;
+	char			*temp;
 
 	i = 0;
 	res = 0;
@@ -70,10 +71,18 @@ int	ft_printf(const char *str, ...)
 				i += ft_strlen(p->flag);
 			p->width = check_width(&str[i], ap);
 			if (p->width != -1)
-				i += ft_strlen(ft_itoa(p->width));
+			{
+				temp = ft_itoa(p->width);
+				i += ft_strlen(temp);
+				free(temp);
+			}
 			p->precision = check_precision(&str[i], ap);
 			if (p->precision != -1 && p->precision != -2)
-				i += ft_strlen(ft_itoa(p->precision)) + 1;
+			{
+				temp = ft_itoa(p->precision);
+				i += ft_strlen(temp);
+				free(temp);
+			}
 			else if (p->precision == -2)
 				i++;
 			p->length = check_length(&str[i]);
@@ -101,10 +110,15 @@ int	ft_printf(const char *str, ...)
 				p->res_str = process_raw_str(p);
 				ft_putstr_fd(p->res_str, 1);
 				res += ft_strlen(p->res_str);
-				if (!p->raw_str[0] && !p->raw_str[1] && p->spc == 'c')
+				if (!p->raw_str[0] && p->spc == 'c') // \0을 출력하는 케이스
 				{
 					ft_putchar_fd('\0', 1);
-					res += 1;
+					res++;
+					if (!ft_strlen(p->res_str) && p->res_str[1]) // \0으로 시작하는 문자열 케이스
+					{
+						ft_putstr_fd(&p->res_str[1], 1);
+						res += ft_strlen(&p->res_str[1]);
+					}
 				}
 				purge(p);
 			}
@@ -116,6 +130,6 @@ int	ft_printf(const char *str, ...)
 int main()
 {
 	int test = 42;
-	ft_printf("%p\n", (void *)(long int)test);
+	ft_printf("%10c", '\0');
 	return (0);
 }*/

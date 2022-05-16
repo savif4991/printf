@@ -1,45 +1,45 @@
 #include "ft_printf.h"
 //%1.0d <- int 0
-static char	*get_res(struct s_info *p, unsigned int padding, int raw_strlen, int slots)
+static char	*get_res(struct s_info *p, int raw_strlen, int slots)
 {
 	char	*res;
-//width = 1, precision = 0, slots = 1
+
 	if ((ft_strchr(p->flag, '+') || ft_strchr(p->flag, ' ')) && p->raw_str[0] != '-')
 		slots++; // +, - ' ' 중 하나가 삽입됨
 	if (ft_strchr(p->flag, '#') && ft_strchr("xX", p->spc) && p->raw_str[0] != '0')
 		slots += 2;
 	if (p->width >= slots) // width와 precision이 충돌할 때 -> 더 큰 값이 작동.
-		padding = p->width - raw_strlen;
+		p->padding = p->width - raw_strlen;
 	if (p->raw_str[0] == '-' && p->precision >= raw_strlen - 1 
 	&& ft_strchr("pdiuxX", p->spc))
 	{
 		if (p->precision >= p->width)
-			padding += (p->precision - raw_strlen + 1);
+			p->padding += (p->precision - raw_strlen + 1);
 	}
 	else if (p->raw_str[0] != '-' && p->precision >= raw_strlen 
 	&& ft_strchr("pdiuxX", p->spc))
 	{
 		if (p->precision > p->width)
-			padding += (p->precision - raw_strlen);
+			p->padding += (p->precision - raw_strlen);
 	}
-	res = (char *)malloc(sizeof(char) * (slots + padding + 1));
+	res = (char *)malloc(sizeof(char) * (slots + p->padding + 1));
 	if (res == 0)
 		return (0);
-	res[slots + padding] = '\0';
+	res[slots + p->padding] = '\0';
 	return (res);
 }
 
-static void	str_or_char(struct s_info *p, unsigned int padding, int raw_strlen)
+static void	str_or_char(struct s_info *p, int raw_strlen)
 {
-	if (padding > 0 && ft_strchr(p->flag, '-'))
+	if (p->padding > 0 && ft_strchr(p->flag, '-'))
 	{
 		ft_strlcpy(p->res_str, p->raw_str, raw_strlen + 1);
-		ft_memset(&p->res_str[raw_strlen], ' ', padding);
+		ft_memset(&p->res_str[raw_strlen], ' ', p->padding);
 	}
-	else if (padding > 0)
+	else if (p->padding > 0)
 	{
-		ft_memset(p->res_str, ' ', padding);
-		ft_strlcpy(&p->res_str[padding], p->raw_str, raw_strlen + 1);
+		ft_memset(p->res_str, ' ', p->padding);
+		ft_strlcpy(&p->res_str[p->padding], p->raw_str, raw_strlen + 1);
 	}
 	else
 		ft_strlcpy(p->res_str, p->raw_str, raw_strlen + 1);
@@ -139,21 +139,22 @@ void	num_padding_flag(struct s_info *p, unsigned int padding, int raw_strlen)
 char	*process_raw_str(struct s_info *p)
 {
 	int				slots;
-	unsigned int	padding;
 	int				raw_strlen;
 	//!! length 는 보류 !!
 	raw_strlen = ft_strlen(p->raw_str);
+	if (!p->raw_str[0])
+		raw_strlen = 1;
 	slots = raw_strlen;
-	padding = 0;
-	p->res_str = get_res(p, padding, raw_strlen, slots);
+	p->padding = 0;
+	p->res_str = get_res(p, raw_strlen, slots);
 	if (ft_strchr("cs\%", p->spc))
-		str_or_char(p, padding, raw_strlen);
+		str_or_char(p, raw_strlen);
 	else if (ft_strchr("pdiuxX", p->spc))
 	{
-		if (padding > 0 && ft_strchr(p->flag, '-'))
-			num_padding_flag(p, padding, raw_strlen);
-		else if (padding > 0)
-			num_padding_noflag(p, padding, raw_strlen);
+		if (p->padding > 0 && ft_strchr(p->flag, '-'))
+			num_padding_flag(p, p->padding, raw_strlen);
+		else if (p->padding > 0)
+			num_padding_noflag(p, p->padding, raw_strlen);
 		else
 			num_no_padding(p, raw_strlen);
 	}

@@ -10,6 +10,7 @@ typedef struct s_info
 	int				width;
 	int				precision;
 	int				length;
+	unsigned int	padding;
 	char			*raw_str;
 	char			*res_str;
 }	p;
