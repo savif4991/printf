@@ -99,8 +99,8 @@ int	ft_printf(const char *str, ...)
 				}
 				else if(p->spc == 'p')
 				{
-					ft_putstr_fd("(nil)", 1);
-					res += 5;
+					ft_putstr_fd("0x0", 1);
+					res += 3;
 				}
 				free(p->flag);
 				free(p);
@@ -130,6 +130,6 @@ int	ft_printf(const char *str, ...)
 int main()
 {
 	int test = 42;
-	ft_printf("%10c", '\0');
+	ft_printf("the address is %4p", (void *)0);
 	return (0);
 }*/
