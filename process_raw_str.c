@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 //%1.0d <- int 0
-static char	*get_res(struct s_info *p, int raw_strlen, int slots)
+char	*get_res(struct s_info *p, int raw_strlen, int slots)
 {
 	char	*res;
 
@@ -18,6 +18,24 @@ static char	*get_res(struct s_info *p, int raw_strlen, int slots)
 	}
 	else if (p->raw_str[0] != '-' && p->precision >= raw_strlen 
 	&& ft_strchr("pdiuxX", p->spc))
+	{
+		if (p->precision > p->width)
+			p->padding += (p->precision - raw_strlen);
+	}
+	res = (char *)malloc(sizeof(char) * (slots + p->padding + 1));
+	if (res == 0)
+		return (0);
+	res[slots + p->padding] = '\0';
+	return (res);
+}
+
+char	*get_null_res(struct s_info *p, int raw_strlen, int slots)
+{ //s or p
+	char	*res;
+
+	if (p->width >= slots) // width와 precision이 충돌할 때 -> 더 큰 값이 작동.
+		p->padding = p->width - raw_strlen;
+	if (p->precision >= raw_strlen && ft_strchr("pdiuxX", p->spc))
 	{
 		if (p->precision > p->width)
 			p->padding += (p->precision - raw_strlen);
@@ -70,6 +88,22 @@ void	str_or_char_null(struct s_info *p, int raw_strlen)
 		else if (p->spc == 'c')
 			ft_strlcpy(p->res_str, "\0", raw_strlen + 1);
 	}
+}
+
+void	ptr_null(struct s_info *p, int raw_strlen)
+{
+	if (p->padding > 0 && ft_strchr(p->flag, '-'))
+	{
+		ft_strlcpy(p->res_str, "0x0", raw_strlen + 1);
+		ft_memset(&p->res_str[raw_strlen], ' ', p->padding);
+	}
+	else if (p->padding > 0)
+	{
+		ft_memset(p->res_str, ' ', p->padding);
+		ft_strlcpy(&p->res_str[p->padding], "0x0", raw_strlen + 1);
+	}
+	else
+		ft_strlcpy(p->res_str, "0x0", raw_strlen + 1);
 }
 
 static void	num_no_padding(struct s_info *p, int raw_strlen)
@@ -178,19 +212,28 @@ char	*process_raw_str(struct s_info *p)
 	int				slots;
 	int				raw_strlen;
 	//!! length 는 보류 !!
-	raw_strlen = ft_strlen(p->raw_str);
-	if (!p->raw_str[0])
+	if (!p->raw_str || !p->raw_str[0])
 		raw_strlen = get_null_strlen(p);
+	else
+		raw_strlen = ft_strlen(p->raw_str);
 	slots = raw_strlen;
 	p->padding = 0;
-	p->res_str = get_res(p, raw_strlen, slots);
-	if (ft_strchr("cs\%", p->spc) && p->raw_str[0])
-		str_or_char(p, raw_strlen);
-	else if (ft_strchr("cs\%", p->spc) && !p->raw_str[0])
-		str_or_char_null(p, raw_strlen);
-	else if (ft_strchr("pdiuxX", p->spc))
+	if (!p->raw_str)
+		p->res_str = get_null_res(p, raw_strlen, slots);
+	else
+		p->res_str = get_res(p, raw_strlen, slots);
+	if (ft_strchr("cs\%", p->spc))
 	{
-		if (p->padding > 0 && ft_strchr(p->flag, '-'))
+		if (!p->raw_str || !p->raw_str[0])
+			str_or_char_null(p, raw_strlen);
+		else if (p->raw_str[0])
+			str_or_char(p, raw_strlen);
+	}
+	else
+	{
+		if (p->spc == 'p' && !p->raw_str)
+			ptr_null(p, raw_strlen);
+		else if (p->padding > 0 && ft_strchr(p->flag, '-'))
 			num_padding_flag(p, p->padding, raw_strlen);
 		else if (p->padding > 0)
 			num_padding_noflag(p, p->padding, raw_strlen);

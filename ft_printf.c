@@ -90,6 +90,7 @@ int	ft_printf(const char *str, ...)
 				i++;
 			p->raw_str = check_specifier(ap, &str[i]);
 			p->spc = str[i++];
+			/*
 			if (p->raw_str == 0)
 			{
 				if (p->spc == 's')
@@ -104,12 +105,12 @@ int	ft_printf(const char *str, ...)
 				}
 				free(p->flag);
 				free(p);
-			}
-			else
+			}*/
+			p->res_str = process_raw_str(p);
+			ft_putstr_fd(p->res_str, 1);
+			res += ft_strlen(p->res_str);
+			if (p->raw_str)
 			{
-				p->res_str = process_raw_str(p);
-				ft_putstr_fd(p->res_str, 1);
-				res += ft_strlen(p->res_str);
 				if (!p->raw_str[0] && p->spc == 'c') // \0을 출력하는 케이스
 				{
 					ft_putchar_fd('\0', 1);
@@ -120,8 +121,8 @@ int	ft_printf(const char *str, ...)
 						res += ft_strlen(&p->res_str[1]);
 					}
 				}
-				purge(p);
 			}
+			purge(p);
 		}
 	}
 	return (res);
@@ -129,7 +130,7 @@ int	ft_printf(const char *str, ...)
 /*
 int main()
 {
-	int test = 42;
-	ft_printf("the address is %4p", (void *)0);
+	char *test;
+	ft_printf("%7s", test);
 	return (0);
 }*/

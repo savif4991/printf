@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu May 19 16:48:34 2022
+# Make data base, printed on Mon May 23 16:48:10 2022
 
 # Variables
 
@@ -45,16 +45,15 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=fcitx
 # makefile
-CURDIR := /home/daejin/바탕화면/printf
+CURDIR := /home/daejin/바탕화면/ft_printf
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{},"_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"ko","availableLanguages":{"*":"ko"},"_languagePackId":"738ac08552cca045871a73764b8c446f.ko","_translationsConfigFile":"/home/daejin/.config/Code/clp/738ac08552cca045871a73764b8c446f.ko/tcf.json","_cacheRoot":"/home/daejin/.config/Code/clp/738ac08552cca045871a73764b8c446f.ko","_resolvedLanguagePackCoreLocation":"/home/daejin/.config/Code/clp/738ac08552cca045871a73764b8c446f.ko/da15b6fd3ef856477bf6f4fb29ba1b7af717770d","_corruptedFile":"/home/daejin/.config/Code/clp/738ac08552cca045871a73764b8c446f.ko/corrupted.info","_languagePackSupport":true}
 # environment
- 
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:44959
+JOURNAL_STREAM = 8:50703
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -74,11 +73,11 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1671
+MANAGERPID = 1675
 # environment
 CLUTTER_IM_MODULE = fcitx
 # environment
-LESSOPEN = | /usr/bin/lesspipe %s
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f8e4a7cc-3807-494c-ab70-3f0c23357aea.sock
 # environment
 LC_NAME = ko_KR.UTF-8
 # environment
@@ -96,7 +95,7 @@ GJS_DEBUG_OUTPUT = stderr
 # makefile (from 'Makefile', line 15)
 LIBFT_SRC = ./libft/ft_atoi.c ./libft/ft_bzero.c ./libft/ft_calloc.c ./libft/ft_isalnum.c ./libft/ft_isalpha.c ./libft/ft_isascii.c ./libft/ft_isdigit.c ./libft/ft_isprint.c ./libft/ft_itoa.c ./libft/ft_memchr.c ./libft/ft_memcmp.c ./libft/ft_memcpy.c ./libft/ft_memmove.c ./libft/ft_memset.c ./libft/ft_putchar_fd.c ./libft/ft_putendl_fd.c ./libft/ft_putnbr_fd.c ./libft/ft_putstr_fd.c ./libft/ft_split.c ./libft/ft_strchr.c ./libft/ft_strdup.c ./libft/ft_striteri.c ./libft/ft_strjoin.c ./libft/ft_strlcat.c ./libft/ft_strlcpy.c ./libft/ft_strlen.c ./libft/ft_strmapi.c ./libft/ft_strncmp.c ./libft/ft_strnstr.c ./libft/ft_strrchr.c ./libft/ft_strtrim.c ./libft/ft_substr.c ./libft/ft_tolower.c ./libft/ft_toupper.c ./libft/ft_lstadd_back.c ./libft/ft_lstadd_front.c ./libft/ft_lstclear.c  ./libft/ft_lstdelone.c ./libft/ft_lstiter.c ./libft/ft_lstlast.c ./libft/ft_lstmap.c ./libft/ft_lstnew.c ./libft/ft_lstsize.c
 # environment
-SESSION_MANAGER = local/daejin-Blade-15-Base-Model-Early-2020-RZ09-0328:@/tmp/.ICE-unix/1936,unix/daejin-Blade-15-Base-Model-Early-2020-RZ09-0328:/tmp/.ICE-unix/1936
+SESSION_MANAGER = local/daejin-Blade-15-Base-Model-Early-2020-RZ09-0328:@/tmp/.ICE-unix/1938,unix/daejin-Blade-15-Base-Model-Early-2020-RZ09-0328:/tmp/.ICE-unix/1938
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -106,17 +105,15 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 037e68e6d3e24528b3f61b2564656a99
+INVOCATION_ID = 45adc7a572874e108a99b627bb9da212
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4472
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3710
 # automatic
 %F = $(notdir $%)
 # environment
@@ -126,11 +123,11 @@ GTK_IM_MODULE = fcitx
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-PWD = /home/daejin/바탕화면/printf
+PWD = /home/daejin/바탕화면/ft_printf
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1890
+SSH_AGENT_PID = 1892
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -141,8 +138,6 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 HOME = /home/daejin
 # makefile (from 'Makefile', line 20)
 BONUS_OBJ = 
-# environment
-LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 VSCODE_CODE_CACHE_PATH = /home/daejin/.config/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
 # environment
@@ -171,8 +166,6 @@ SHLVL = 0
 CC = gcc
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
-# environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-68eae1c0-bc4c-4347-a941-d5cecb5c4bfc.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -191,6 +184,8 @@ NAME = libftprintf.a
 LC_TELEPHONE = ko_KR.UTF-8
 # default
 MAKE_COMMAND := make
+# environment
+OLDPWD = /home/daejin
 # default
 .VARIABLES := 
 # automatic
@@ -254,9 +249,9 @@ LC_ADDRESS = ko_KR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 4472
+VSCODE_PID = 3710
 # variable set hash-table stats:
-# Load=122/1024=12%, Rehash=0, Collisions=21/169=12%
+# Load=120/1024=12%, Rehash=0, Collisions=20/167=12%
 
 # Pattern-specific Variable Values
 
@@ -264,9 +259,9 @@ VSCODE_PID = 4472
 
 # Directories
 
-# . (device 66306, inode 18482339): 26 files, no impossibilities.
+# . (device 66306, inode 18482341): 25 files, no impossibilities.
 
-# 26 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -277,6 +272,7 @@ VSCODE_PID = 4472
 ft_strmapi.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 46):
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
@@ -291,7 +287,7 @@ ft_lstiter.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_strlcpy.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -319,7 +315,7 @@ ft_itoa.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_wr
 # Not a target:
 libft/ft_lstmap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -340,11 +336,10 @@ ft_strlen.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 libft/ft_strncmp.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
- 
 ft_isdigit.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -355,7 +350,7 @@ ft_isdigit.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_isalnum.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -385,14 +380,14 @@ ft_memchr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 check_specifier.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strdup.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -406,28 +401,28 @@ ft_memset.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 ft_write_d.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_write_lowerx.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_memmove.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_write_i.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -455,7 +450,7 @@ ft_strrchr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_toupper.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -499,6 +494,7 @@ ft_printf.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # automatic
 # < := ft_printf.c
 # automatic
+ 
 # ^ := ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 # automatic
 # ? := ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
@@ -510,21 +506,21 @@ ft_printf.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 libft/ft_strnstr.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_putstr_fd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_write_upperX.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -538,7 +534,7 @@ ft_strlcat.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 process_raw_str.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -558,14 +554,14 @@ ft_write_u.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_lstdelone.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -586,28 +582,28 @@ ft_write_per.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c 
 # Not a target:
 libft/ft_putchar_fd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_atoi.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.374023791
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_write_s.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strtrim.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -628,7 +624,7 @@ ft_bzero.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_w
 # Not a target:
 libft/ft_lstadd_back.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -642,7 +638,7 @@ ft_write_s.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 ft_write_c.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -663,21 +659,21 @@ ft_lstnew.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 libft/ft_putendl_fd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strmapi.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_lstiter.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -698,14 +694,14 @@ ft_putnbr_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c 
 # Not a target:
 libft/ft_memcpy.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_itoa.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -726,31 +722,32 @@ fclean:
 # Not a target:
 libft/ft_memcmp.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strlen.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_isascii.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_isdigit.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
+ 
 ft_calloc.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -768,36 +765,35 @@ ft_substr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 check_flag.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_lstlast.c:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_memchr.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_memset.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_printf.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -818,14 +814,14 @@ ft_lstsize.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_strlcat.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_tolower.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -845,35 +841,35 @@ check_precision.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 # Not a target:
 libft/ft_strrchr.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strjoin.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_split.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_lstclear.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 ft_write_u.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -894,7 +890,7 @@ ft_strlcpy.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 ft_write_per.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -905,6 +901,7 @@ ft_lstmap.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 #  recipe to execute (from 'Makefile', line 46):
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 
+ 
 ft_strncmp.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -937,7 +934,7 @@ ft_isalnum.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_bzero.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.374023791
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -958,7 +955,7 @@ ft_isascii.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 libft/ft_isprint.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -993,14 +990,14 @@ ft_strchr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 # Not a target:
 ft_write_p.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_striteri.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -1020,7 +1017,6 @@ check_specifier.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 
 ft_write_d.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 46):
@@ -1057,14 +1053,14 @@ ft_putstr_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c 
 # Not a target:
 libft/ft_lstnew.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 check_width.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
@@ -1081,14 +1077,14 @@ libftprintf.a: ft_printf.o ft_write_c.o ft_write_d.o ft_write_i.o ft_write_p.o f
 # Not a target:
 libft/ft_lstadd_front.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_putnbr_fd.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -1123,14 +1119,14 @@ process_raw_str.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 # Not a target:
 libft/ft_calloc.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_substr.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -1144,10 +1140,11 @@ ft_strtrim.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 # Not a target:
 check_precision.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
+ 
 ft_lstadd_back.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperX.c check_flag.c check_length.c check_precision.c check_specifier.c check_width.c process_raw_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1158,28 +1155,28 @@ ft_lstadd_back.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.
 # Not a target:
 libft/ft_isalpha.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_lstsize.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 check_length.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:40:31.200968553
+#  Last modified 2022-05-23 16:47:30.19682494
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 libft/ft_strchr.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-19 16:41:29.378023935
+#  Last modified 2022-05-23 16:47:58.565228629
 #  File has been updated.
 #  Successfully updated.
 
@@ -1198,12 +1195,12 @@ ft_putendl_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 138 / storage = 2027 B / avg = 14 B
-# current buf: size = 8162 B / used = 2027 B / count = 138 / avg = 14 B
+# strcache buffers: 1 (0) / strings = 137 / storage = 2013 B / avg = 14 B
+# current buf: size = 8162 B / used = 2013 B / count = 137 / avg = 14 B
 
-# strcache performance: lookups = 286 / hit rate = 51%
+# strcache performance: lookups = 285 / hit rate = 51%
 # hash-table stats:
-# Load=138/8192=2%, Rehash=0, Collisions=6/286=2%
-# Finished Make data base on Thu May 19 16:48:34 2022
+# Load=137/8192=2%, Rehash=0, Collisions=6/285=2%
+# Finished Make data base on Mon May 23 16:48:10 2022
 
  
