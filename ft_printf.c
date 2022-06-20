@@ -80,7 +80,7 @@ int	ft_printf(const char *str, ...)
 			if (p->precision != -1 && p->precision != -2)
 			{
 				temp = ft_itoa(p->precision);
-				i += ft_strlen(temp);
+				i += ft_strlen(temp) + 1;
 				free(temp);
 			}
 			else if (p->precision == -2)
@@ -90,22 +90,6 @@ int	ft_printf(const char *str, ...)
 				i++;
 			p->raw_str = check_specifier(ap, &str[i]);
 			p->spc = str[i++];
-			/*
-			if (p->raw_str == 0)
-			{
-				if (p->spc == 's')
-				{
-					ft_putstr_fd("(null)", 1);
-					res += 6;
-				}
-				else if(p->spc == 'p')
-				{
-					ft_putstr_fd("0x0", 1);
-					res += 3;
-				}
-				free(p->flag);
-				free(p);
-			}*/
 			p->res_str = process_raw_str(p);
 			ft_putstr_fd(p->res_str, 1);
 			res += ft_strlen(p->res_str);
@@ -127,10 +111,10 @@ int	ft_printf(const char *str, ...)
 	}
 	return (res);
 }
+
 /*
 int main()
 {
-	char *test;
-	ft_printf("%7s", test);
+	ft_printf("%01.d\n", 0);
 	return (0);
 }*/
