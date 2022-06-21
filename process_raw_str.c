@@ -8,13 +8,13 @@ char	*get_res(struct s_info *p, int slots)
 		slots++; // +, - ' ' 중 하나가 삽입됨
 	if (ft_strchr(p->flag, '#') && ft_strchr("xX", p->spc) && p->raw_str[0] != '0')
 		slots += 2;
-	if (p->precision >= p->width && p->precision >= slots) // width와 precision이 충돌할 때
+	if (p->precision >= p->width && p->precision >= slots && p->spc != 's') // width와 precision이 충돌할 때
 	{
 		p->padding = p->precision - slots;
 		if (p->raw_str[0] == '-')
 			p->padding++;
 	}
-	else if (p->width > p->precision && p->width >= slots)
+	else if ((p->width > p->precision || (ft_strchr(p->flag, '-') && p->spc == 's')) && p->width >= slots)
 		p->padding = p->width - slots;
 	res = (char *)malloc(sizeof(char) * (slots + p->padding + 1));
 	if (res == 0)
@@ -43,6 +43,8 @@ char	*get_null_res(struct s_info *p, int slots)
 
 void	str_or_char(struct s_info *p, int raw_strlen)
 {
+	if (p->precision < raw_strlen && p->precision >= 0 && p->width > p->precision)
+		p->padding = p->width - p->precision;
 	if (p->precision < raw_strlen && p->precision >= 0 && ft_strchr(p->flag, '-')) //truncated by precision
 	{
 		ft_strlcpy(p->res_str, p->raw_str, p->precision + 1);
@@ -110,7 +112,7 @@ void	ptr_null(struct s_info *p, int raw_strlen)
 		ft_strlcpy(p->res_str, "0x0", raw_strlen + 1);
 }
 
-static void	num_no_padding(struct s_info *p, int raw_strlen)
+void	num_no_padding(struct s_info *p, int raw_strlen)
 {
 	unsigned int	i;
 
@@ -129,10 +131,15 @@ static void	num_no_padding(struct s_info *p, int raw_strlen)
 		ft_strlcpy(&p->res_str[i], "0X", 3);
 		i += 2;
 	}
-	if (p->precision == -2 && p->raw_str[0] == '0')
-		p->res_str[i] = '\0';//?
-	else if (p->precision == 0 && p->raw_str[0] == '0')
+	if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
+	{
 		p->res_str[i] = '\0';
+		if (ft_strchr(p->flag, '0'))
+		{
+			p->res_str[i++] = ' ';
+			p->res_str[i] = '\0';
+		}
+	}
 	else
 		ft_strlcpy(&p->res_str[i], p->raw_str, raw_strlen + 1);
 }
@@ -164,7 +171,10 @@ void	num_padding_noflag(struct s_info *p, unsigned int padding, int raw_strlen)
 		i += 2;
 	}
 	if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
+	{
+		p->res_str[i++] = ' ';
 		p->res_str[i] = '\0';
+	}
 	else
 		ft_strlcpy(&p->res_str[i], p->raw_str, raw_strlen + 1);
 	if (p->raw_str[0] == '-' && (p->precision >= raw_strlen || ft_strchr(p->flag, '0')))
@@ -172,6 +182,22 @@ void	num_padding_noflag(struct s_info *p, unsigned int padding, int raw_strlen)
 		p->res_str[0] = '-';
 		p->res_str[i] = '0';
 	}
+	if (ft_strchr(p->flag, '0') && p->width > p->precision && p->precision >= 0 && p->spc != 's')
+	{
+		if (p->precision >= (int)ft_strlen(p->raw_str))
+		{
+			ft_memset(p->res_str, ' ', p->width - p->precision);
+			if (p->raw_str[0] == '-')
+				p->res_str[p->width - p->precision - 1] = '-';
+		}
+		else
+		{
+			ft_memset(p->res_str, ' ', p->width - (int)ft_strlen(p->raw_str));
+			if (p->raw_str[0] == '-')
+				p->res_str[p->width - (int)ft_strlen(p->raw_str) - 1] = '-';
+		}
+	}
+
 }
 
 void	num_padding_flag(struct s_info *p, unsigned int padding, int slots)

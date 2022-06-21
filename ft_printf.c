@@ -115,6 +115,6 @@ int	ft_printf(const char *str, ...)
 /*
 int main()
 {
-	ft_printf("%01.d\n", 0);
-	return (0);
+   printf("%0014.2i%020i%0002.i%000.5i", (int)-2147483648, 3, 30, -1);   
+   return (0);
 }*/
