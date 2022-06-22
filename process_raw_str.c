@@ -73,26 +73,26 @@ void	str_or_char_null(struct s_info *p, int raw_strlen)
 {
 	if (p->padding > 0 && ft_strchr(p->flag, '-'))
 	{
-		if (p->spc == 's')
-			ft_strlcpy(p->res_str, "(null)", raw_strlen + 1);
-		else if (p->spc == 'c')
+		if (p->spc == 'c' || (p->spc == 's' && p->precision == -2))
 			ft_strlcpy(p->res_str, "\0", raw_strlen + 1);
+		else if (p->spc == 's')
+			ft_strlcpy(p->res_str, "(null)", raw_strlen + 1);
 		ft_memset(&p->res_str[raw_strlen], ' ', p->padding);
 	}
 	else if (p->padding > 0)
 	{
 		ft_memset(p->res_str, ' ', p->padding);
-		if (p->spc == 's')
-			ft_strlcpy(&p->res_str[p->padding], "(null)", raw_strlen + 1);
-		else if (p->spc == 'c')
+		if (p->spc == 'c' || (p->spc == 's' && p->precision == -2))
 			ft_strlcpy(&p->res_str[p->padding], "\0", raw_strlen + 1);
+		else if (p->spc == 's')
+			ft_strlcpy(&p->res_str[p->padding], "(null)", raw_strlen + 1);
 	}
 	else
 	{
-		if (p->spc == 's')
-			ft_strlcpy(p->res_str, "(null)", raw_strlen + 1);
-		else if (p->spc == 'c')
+		if (p->spc == 'c' || (p->spc == 's' && p->precision == -2))
 			ft_strlcpy(p->res_str, "\0", raw_strlen + 1);
+		else if (p->spc == 's')
+			ft_strlcpy(p->res_str, "(null)", raw_strlen + 1);
 	}
 }
 
@@ -194,7 +194,7 @@ void	num_padding_noflag(struct s_info *p, unsigned int padding, int raw_strlen)
 		{
 			ft_memset(p->res_str, ' ', p->width - (int)ft_strlen(p->raw_str));
 			if (p->raw_str[0] == '-')
-				p->res_str[p->width - (int)ft_strlen(p->raw_str) - 1] = '-';
+				p->res_str[p->width - (int)ft_strlen(p->raw_str)] = '-';
 		}
 	}
 
@@ -263,8 +263,13 @@ void	num_padding_flag(struct s_info *p, unsigned int padding, int slots)
 
 int	get_null_strlen(struct s_info *p)
 {
-	if (p->spc == 's') //"(null)"
+	if (p->spc == 's' && p->precision == -2)
+		return (0);
+	else if (p->spc == 's') //"(null)"
+	{
+		p->raw_str = "(null)";
 		return (6);
+	}
 	else if (p->spc == 'p') //"0x0"
 		return (3);
 	else
@@ -276,19 +281,19 @@ char	*process_raw_str(struct s_info *p)
 	int				slots;
 	int				raw_strlen;
 	//!! length 는 보류 !!
-	if (!p->raw_str || !p->raw_str[0] || (p->precision == -2 && p->spc == 's'))
+	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c') || (p->precision == -2 && p->spc == 's'))
 		raw_strlen = get_null_strlen(p);
 	else
 		raw_strlen = ft_strlen(p->raw_str);
 	slots = raw_strlen;
 	p->padding = 0;
-	if (!p->raw_str || !p->raw_str[0] || (p->precision == -2 && p->spc == 's'))
+	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c') || (p->precision == -2 && p->spc == 's'))
 		p->res_str = get_null_res(p, slots);
 	else
 		p->res_str = get_res(p, slots);
 	if (ft_strchr("cs\%", p->spc))
 	{
-		if (!p->raw_str || !p->raw_str[0] || (p->precision == -2 && p->spc == 's'))
+		if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c') || (p->precision == -2 && p->spc == 's'))
 			str_or_char_null(p, slots);
 		else if (p->raw_str[0])
 			str_or_char(p, slots);
