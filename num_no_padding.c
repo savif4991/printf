@@ -11,6 +11,16 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
+static void	zero_with_precision(struct s_info *p, unsigned int i)
+{
+	p->res_str[i] = '\0';
+	if (ft_strchr(p->flag, '0'))
+	{
+		p->res_str[i++] = ' ';
+		p->res_str[i] = '\0';
+	}
+}
+
 void	num_no_padding(struct s_info *p, int raw_strlen)
 {
 	unsigned int	i;
@@ -31,14 +41,7 @@ void	num_no_padding(struct s_info *p, int raw_strlen)
 		i += 2;
 	}
 	if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
-	{
-		p->res_str[i] = '\0';
-		if (ft_strchr(p->flag, '0'))
-		{
-			p->res_str[i++] = ' ';
-			p->res_str[i] = '\0';
-		}
-	}
+		zero_with_precision(p, i);
 	else
 		ft_strlcpy(&p->res_str[i], p->raw_str, raw_strlen + 1);
 }

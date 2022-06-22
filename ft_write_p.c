@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 #include "./ft_printf.h"
 
-static char	*get_res(unsigned long long int quo,
-	unsigned int dig, unsigned long long val)
+static char	*get_res(unsigned int dig, unsigned long long val)
 {
 	char			*res;
 	unsigned int	rem;
@@ -39,9 +38,7 @@ static char	*get_res(unsigned long long int quo,
 char	*ft_write_p(va_list ap)
 {
 	unsigned long long		val;
-	char					*str;
 	unsigned long long int	quo;
-	unsigned int			i;
 	unsigned int			dig;
 
 	val = va_arg(ap, unsigned long long);
@@ -53,5 +50,5 @@ char	*ft_write_p(va_list ap)
 		dig++;
 	}
 	dig += 2;
-	return (get_res(quo, dig, val));
+	return (get_res(dig, val));
 }

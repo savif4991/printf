@@ -11,6 +11,50 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
+static void	p_num_overprecision(struct s_info *p, int slots, unsigned int i)
+{
+	ft_memset(&p->res_str[i], '0', p->precision - slots);
+	i += p->precision - slots;
+	ft_strlcpy(&p->res_str[i], p->raw_str, slots + 1);
+	i += slots;
+	if (p->width > (int)ft_strlen(p->res_str))
+		ft_memset(&p->res_str[i], ' ', p->width - ft_strlen(p->res_str));
+}
+
+static void	n_num_overprecision(struct s_info *p, int slots, unsigned int i)
+{
+	p->res_str[i++] = '-';
+	ft_memset(&p->res_str[i], '0', p->precision - slots + 1);
+	i += p->precision - slots + 1;
+	ft_strlcpy(&p->res_str[i], p->raw_str + 1, slots);
+	i += slots - 1;
+	if (p->width > (int)ft_strlen(p->res_str))
+		ft_memset(&p->res_str[i], ' ', p->width - ft_strlen(p->res_str));
+}
+
+static void	pad_without_precision(struct s_info *p, int slots,
+				unsigned int i, unsigned int padding)
+{
+	if ((p->precision != -2 && p->precision != 0) || p->raw_str[0] != '0')
+	{
+		ft_strlcpy(&p->res_str[i], p->raw_str, slots + 1);
+		i += slots;
+	}
+	if (ft_strchr(p->flag, '0'))
+		ft_memset(&p->res_str[i], '0', padding);
+	else
+		ft_memset(&p->res_str[i], ' ', padding);
+	if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
+	{
+		i += padding;
+		if (ft_strchr(p->flag, '0'))
+			p->res_str[i++] = '0';
+		else
+			p->res_str[i++] = ' ';
+		p->res_str[i] = '\0';
+	}
+}
+
 void	num_padding_flag(struct s_info *p, unsigned int padding, int slots)
 {
 	unsigned int	i;
@@ -31,43 +75,9 @@ void	num_padding_flag(struct s_info *p, unsigned int padding, int slots)
 		i += 2;
 	}
 	if (p->raw_str[0] != '-' && p->precision >= slots)
-	{
-		ft_memset(&p->res_str[i], '0', p->precision - slots);
-		i += p->precision - slots;
-		ft_strlcpy(&p->res_str[i], p->raw_str, slots + 1);
-		i += slots;
-		if (p->width > (int)ft_strlen(p->res_str))
-			ft_memset(&p->res_str[i], ' ', p->width - ft_strlen(p->res_str));
-	}
+		p_num_overprecision(p, slots, i);
 	else if (p->raw_str[0] == '-' && p->precision >= slots - 1)
-	{
-		p->res_str[i++] = '-';
-		ft_memset(&p->res_str[i], '0', p->precision - slots + 1);
-		i += p->precision - slots + 1;
-		ft_strlcpy(&p->res_str[i], p->raw_str + 1, slots);
-		i += slots - 1;
-		if (p->width > (int)ft_strlen(p->res_str))
-			ft_memset(&p->res_str[i], ' ', p->width - ft_strlen(p->res_str));
-	}
+		n_num_overprecision(p, slots, i);
 	else
-	{
-		if ((p->precision != -2 && p->precision != 0) || p->raw_str[0] != '0')
-		{
-			ft_strlcpy(&p->res_str[i], p->raw_str, slots + 1);
-			i += slots;
-		}
-		if (ft_strchr(p->flag, '0'))
-			ft_memset(&p->res_str[i], '0', padding);
-		else
-			ft_memset(&p->res_str[i], ' ', padding);
-		if ((p->precision == -2 || p->precision == 0) && p->raw_str[0] == '0')
-		{
-			i += padding;
-			if (ft_strchr(p->flag, '0'))
-				p->res_str[i++] = '0';
-			else
-				p->res_str[i++] = ' ';
-			p->res_str[i] = '\0';
-		}
-	}
+		pad_without_precision(p, slots, i, padding);
 }

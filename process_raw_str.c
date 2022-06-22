@@ -71,23 +71,8 @@ static int	get_null_strlen(struct s_info *p)
 		return (1);
 }
 
-char	*process_raw_str(struct s_info *p)
+static void	assemble_res(struct s_info *p, int slots)
 {
-	int				slots;
-	int				raw_strlen;
-
-	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c')
-		|| (p->precision == -2 && p->spc == 's'))
-		raw_strlen = get_null_strlen(p);
-	else
-		raw_strlen = ft_strlen(p->raw_str);
-	slots = raw_strlen;
-	p->padding = 0;
-	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c')
-		|| (p->precision == -2 && p->spc == 's'))
-		p->res_str = get_null_res(p, slots);
-	else
-		p->res_str = get_res(p, slots);
 	if (ft_strchr("cs\%", p->spc))
 	{
 		if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c')
@@ -109,5 +94,25 @@ char	*process_raw_str(struct s_info *p)
 		else
 			num_no_padding(p, slots);
 	}
+}
+
+char	*process_raw_str(struct s_info *p)
+{
+	int				slots;
+	int				raw_strlen;
+
+	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c')
+		|| (p->precision == -2 && p->spc == 's'))
+		raw_strlen = get_null_strlen(p);
+	else
+		raw_strlen = ft_strlen(p->raw_str);
+	slots = raw_strlen;
+	p->padding = 0;
+	if (!p->raw_str || (!p->raw_str[0] && p->spc == 'c')
+		|| (p->precision == -2 && p->spc == 's'))
+		p->res_str = get_null_res(p, slots);
+	else
+		p->res_str = get_res(p, slots);
+	assemble_res(p, slots);
 	return (p->res_str);
 }
