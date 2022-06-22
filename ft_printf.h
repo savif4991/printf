@@ -44,5 +44,13 @@ char	*ft_write_u(va_list ap);
 char	*ft_write_lowerx(va_list ap);
 char	*ft_write_upperx(va_list ap);
 char	*ft_write_per(va_list ap);
+void	num_no_padding(struct s_info *p, int raw_strlen);
+void	num_padding_flag(struct s_info *p, unsigned int padding, int slots);
+void	num_padding_noflag(struct s_info *p,
+			unsigned int padding, int raw_strlen);
+void	ptr_null(struct s_info *p, int raw_strlen);
+void	str_or_char_flag(struct s_info *p, int raw_strlen);
+void	str_or_char_noflag(struct s_info *p, int raw_strlen);
+void	str_or_char_null(struct s_info *p, int raw_strlen);
 
 #endif
