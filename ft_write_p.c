@@ -9,31 +9,21 @@
 /*   Updated: 2022/06/22 18:20:34 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "./ft_printf.h"
 
-static char	*convert_to_hex(unsigned long long val)
+static char	*get_res(unsigned long long int quo,
+	unsigned int dig, unsigned long long val)
 {
-	char					*res;
-	unsigned int			rem;
-	unsigned long long int	quo;
-	unsigned int			i;
-	unsigned int			dig;
+	char			*res;
+	unsigned int	rem;
+	unsigned int	i;
 
-	if (!val)
-		return (0);
-	quo = val;
-	dig = 1;
-	while (quo / 16)
-	{
-		quo /= 16;
-		dig++;
-	}
-	dig += 2;
 	res = (char *)malloc((dig + 1) * sizeof(char));
 	if (res == 0)
 		return (0);
 	res[dig] = '\0';
+	if (!val)
+		res[2] = '0';
 	i = 1;
 	while (val)
 	{
@@ -48,12 +38,20 @@ static char	*convert_to_hex(unsigned long long val)
 
 char	*ft_write_p(va_list ap)
 {
-	unsigned long long	val;
-	void				*ptr;
-	char				*str;
+	unsigned long long		val;
+	char					*str;
+	unsigned long long int	quo;
+	unsigned int			i;
+	unsigned int			dig;
 
-	ptr = va_arg(ap, void *);
-	val = (unsigned long long)ptr;
-	str = convert_to_hex(val);
-	return (str);
+	val = va_arg(ap, unsigned long long);
+	quo = val;
+	dig = 1;
+	while (quo / 16)
+	{
+		quo /= 16;
+		dig++;
+	}
+	dig += 2;
+	return (get_res(quo, dig, val));
 }

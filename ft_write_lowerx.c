@@ -11,21 +11,13 @@
 /* ************************************************************************** */
 #include "./ft_printf.h"
 
-static char	*convert_to_hex(unsigned long long val)
+static char	*get_res(unsigned long long int quo,
+	unsigned int dig, unsigned long long val)
 {
-	char					*res;
-	unsigned int			rem;
-	unsigned long long int	quo;
-	unsigned int			i;
-	unsigned int			dig;
+	char			*res;
+	unsigned int	rem;
+	unsigned int	i;
 
-	quo = val;
-	dig = 1;
-	while (quo / 16)
-	{
-		quo /= 16;
-		dig++;
-	}
 	res = (char *)malloc((dig + 1) * sizeof(char));
 	if (res == 0)
 		return (0);
@@ -44,12 +36,19 @@ static char	*convert_to_hex(unsigned long long val)
 
 char	*ft_write_lowerx(va_list ap)
 {
-	unsigned long long	val;
-	char				*str;
+	unsigned long long		val;
+	char					*str;
+	unsigned long long int	quo;
+	unsigned int			i;
+	unsigned int			dig;
 
 	val = va_arg(ap, unsigned long long);
-	str = convert_to_hex(val);
-	if (str == 0)
-		return (0);
-	return (str);
+	quo = val;
+	dig = 1;
+	while (quo / 16)
+	{
+		quo /= 16;
+		dig++;
+	}
+	return (get_res(quo, dig, val));
 }
