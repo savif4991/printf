@@ -9,9 +9,8 @@
 /*   Updated: 2022/06/22 18:20:55 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
-//%1.0d <- int 0
+
 char	*get_res(struct s_info *p, int slots)
 {
 	char	*res;

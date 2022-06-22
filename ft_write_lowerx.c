@@ -9,7 +9,6 @@
 /*   Updated: 2022/06/22 18:20:29 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "./ft_printf.h"
 
 static char	*convert_to_hex(unsigned long long val)

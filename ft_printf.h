@@ -28,6 +28,8 @@ typedef struct s_info
 }	t_info;
 
 int		ft_printf(const char *str, ...);
+int		collect_format(const char *str, struct s_info *p, va_list ap);
+int		print_res_str(struct s_info *p);
 char	*process_raw_str(struct s_info *p);
 char	*check_specifier(va_list ap, const char *str);
 int		check_precision(const char *str, va_list ap);
