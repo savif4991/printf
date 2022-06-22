@@ -22,8 +22,11 @@ static char	*convert_to_hex(unsigned long long val)
 
 	quo = val;
 	dig = 1;
-	while (quo /= 16)
+	while (quo / 16)
+	{
+		quo /= 16;
 		dig++;
+	}
 	res = (char *)malloc((dig + 1) * sizeof(char));
 	if (res == 0)
 		return (0);

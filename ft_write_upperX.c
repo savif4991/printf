@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_upperX.c                                  :+:      :+:    :+:   */
+/*   ft_write_upperx.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,8 +22,11 @@ static char	*convert_to_hex(unsigned long long val)
 
 	quo = val;
 	dig = 1;
-	while (quo /= 16)
+	while (quo / 16)
+	{
+		quo /= 16;
 		dig++;
+	}
 	res = (char *)malloc((dig + 1) * sizeof(char));
 	if (res == 0)
 		return (0);
@@ -40,7 +43,7 @@ static char	*convert_to_hex(unsigned long long val)
 	return (res);
 }
 
-char	*ft_write_upperX(va_list ap)
+char	*ft_write_upperx(va_list ap)
 {
 	unsigned long long	val;
 	char				*str;

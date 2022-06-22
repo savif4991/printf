@@ -25,7 +25,7 @@ typedef struct s_info
 	unsigned int	padding;
 	char			*raw_str;
 	char			*res_str;
-}	p;
+}	t_info;
 
 int		ft_printf(const char *str, ...);
 char	*process_raw_str(struct s_info *p);
@@ -40,7 +40,7 @@ char	*ft_write_d(va_list ap);
 char	*ft_write_i(va_list ap);
 char	*ft_write_u(va_list ap);
 char	*ft_write_lowerx(va_list ap);
-char	*ft_write_upperX(va_list ap);
+char	*ft_write_upperx(va_list ap);
 char	*ft_write_per(va_list ap);
 
 #endif

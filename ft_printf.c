@@ -9,9 +9,7 @@
 /*   Updated: 2022/06/22 18:20:04 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
-#include <stdio.h>
 
 static unsigned int	count_per(const char *str)
 {
@@ -41,6 +39,7 @@ int	ft_printf(const char *str, ...)
 	int				res;
 	unsigned int	per_count;
 	char			*temp;
+	struct s_info	*p;
 
 	i = 0;
 	res = 0;
@@ -55,7 +54,7 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '\0')
 				return (res);
 		}
-		if ((count_per(&str[i]) % 2) == 0) //printf 작동 X
+		if ((count_per(&str[i]) % 2) == 0)
 		{
 			per_count = (count_per(&str[i]) / 2);
 			while (per_count)
@@ -66,16 +65,16 @@ int	ft_printf(const char *str, ...)
 				per_count--;
 			}
 		}
-		else //printf 작동 O
+		else
 		{
 			while (str[i] == '\%' && str[i + 1] == '\%')
 			{
 				ft_putchar_fd(str[i], 1);
 				res++;
 				i++;
-			} //마지막 %에서 빠져나옴
+			}
 			i++;
-			struct s_info *p = (struct s_info *)malloc(sizeof(struct s_info));
+			p = (struct s_info *)malloc(sizeof(struct s_info));
 			if (p == 0)
 				return (0);
 			p->flag = check_flag(&str[i]);
@@ -104,11 +103,11 @@ int	ft_printf(const char *str, ...)
 			res += ft_strlen(p->res_str);
 			if (p->raw_str)
 			{
-				if (!p->raw_str[0] && p->spc == 'c') // \0을 출력하는 케이스
+				if (!p->raw_str[0] && p->spc == 'c')
 				{
 					ft_putchar_fd('\0', 1);
 					res++;
-					if (!ft_strlen(p->res_str) && p->res_str[1]) // \0으로 시작하는 문자열 케이스
+					if (!ft_strlen(p->res_str) && p->res_str[1])
 					{
 						ft_putstr_fd(&p->res_str[1], 1);
 						res += ft_strlen(&p->res_str[1]);
@@ -120,10 +119,3 @@ int	ft_printf(const char *str, ...)
 	}
 	return (res);
 }
-
-/*
-int main()
-{
-   ft_printf("%1.s", "21-school.kr");
-   return (0);
-}*/

@@ -31,7 +31,7 @@ char	*check_specifier(va_list ap, const char *str)
 	else if (*str == 'x')
 		res = ft_write_lowerx(ap);
 	else if (*str == 'X')
-		res = ft_write_upperX(ap);
+		res = ft_write_upperx(ap);
 	else if (*str == '\%')
 		res = ft_write_per(ap);
 	else
