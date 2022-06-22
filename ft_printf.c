@@ -85,9 +85,6 @@ int	ft_printf(const char *str, ...)
 			}
 			else if (p->precision == -2)
 				i++;
-			p->length = check_length(&str[i]);
-			if (p->length != -1)
-				i++;
 			p->raw_str = check_specifier(ap, &str[i]);
 			p->spc = str[i++];
 			p->res_str = process_raw_str(p);
