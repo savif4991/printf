@@ -21,7 +21,7 @@ static unsigned int	count_per(const char *str)
 	return (i);
 }
 
-static int	print_str_until_spc(unsigned int *outer_i, const char *str)
+static int	print_str_until_per(unsigned int *outer_i, const char *str)
 {
 	unsigned int	i;
 	int				res;
@@ -64,7 +64,6 @@ int	ft_printf(const char *str, ...)
 	va_list			ap;
 	unsigned int	i;
 	int				res;
-	char			*temp;
 	struct s_info	*p;
 
 	i = 0;
@@ -72,13 +71,10 @@ int	ft_printf(const char *str, ...)
 	va_start(ap, str);
 	while (str[i])
 	{
-		res += print_str_until_spc(&i, &str[i]);
-		if ((count_per(&str[i]) % 2) == 0)
-			res += print_per(&i, &str[i]);
-		else
+		res += print_str_until_per(&i, &str[i]);
+		res += print_per(&i, &str[i]);
+		if (str[i] == '\%')
 		{
-			if (str[i] == '\%' && str[i + 1] == '\%')
-				res += print_per(&i, &str[i]);
 			i++;
 			p = (struct s_info *)malloc(sizeof(struct s_info));
 			if (p == 0)

@@ -1,12 +1,12 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/daejlee/Desktop/ft_printf'
+make: Leaving directory `/Users/daejlee/Desktop/ft_printf'
  
 make: *** No rule to make target `libft/ft_atoi.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_bzero.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_calloc.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_isalnum.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_isalpha.c', needed by `ft_printf.o'.
-
 make: *** No rule to make target `libft/ft_isascii.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_isdigit.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_isprint.c', needed by `ft_printf.o'.
@@ -16,7 +16,6 @@ make: *** No rule to make target `libft/ft_memcmp.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_memcpy.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_memmove.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_memset.c', needed by `ft_printf.o'.
-
 make: *** No rule to make target `libft/ft_putchar_fd.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_putendl_fd.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_putnbr_fd.c', needed by `ft_printf.o'.
@@ -27,7 +26,6 @@ make: *** No rule to make target `libft/ft_strdup.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_striteri.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strjoin.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strlcat.c', needed by `ft_printf.o'.
-
 make: *** No rule to make target `libft/ft_strlcpy.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strlen.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strmapi.c', needed by `ft_printf.o'.
@@ -35,7 +33,6 @@ make: *** No rule to make target `libft/ft_strncmp.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strnstr.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strrchr.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_strtrim.c', needed by `ft_printf.o'.
-
 make: *** No rule to make target `libft/ft_substr.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_tolower.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_toupper.c', needed by `ft_printf.o'.
@@ -44,11 +41,8 @@ make: *** No rule to make target `libft/ft_lstadd_front.c', needed by `ft_printf
 make: *** No rule to make target `libft/ft_lstclear.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_lstdelone.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_lstiter.c', needed by `ft_printf.o'.
-make: 
-*** No rule to make target `libft/ft_lstlast.c', needed by `ft_printf.o'.
+make: *** No rule to make target `libft/ft_lstlast.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_lstmap.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_lstnew.c', needed by `ft_printf.o'.
 make: *** No rule to make target `libft/ft_lstsize.c', needed by `ft_printf.o'.
 
-make: Leaving directory `/Users/daejlee/Desktop/ft_printf'
- 

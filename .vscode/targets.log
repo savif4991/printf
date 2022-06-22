@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `libft/ft_atoi.c', needed by `ft_printf.o'.  Stop.
 
 
-# Make data base, printed on Wed Jun 22 20:35:14 2022
+# Make data base, printed on Wed Jun 22 21:00:33 2022
 
 # Variables
 
@@ -43,8 +43,7 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
- 
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqnc0035xb/T/vscode-ipc-9fab08d1-ae61-4a4a-9003-2bf3c971893c.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cqnc0035xb/T/vscode-ipc-195b99db-a1ca-42b9-85f5-47fc3f49569e.sock
 # environment
 VSCODE_CWD = /
 # makefile (from `Makefile', line 26)
@@ -84,7 +83,7 @@ VSCODE_CODE_CACHE_PATH = /Users/daejlee/Library/Application Support/Code/CachedD
 # environment
 LOGNAME = daejlee
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 ZSH = /Users/daejlee/.oh-my-zsh
 # environment
@@ -194,6 +193,7 @@ ft_strmapi.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
+ 
 ft_lstiter.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -208,7 +208,6 @@ libft/ft_strlcpy.c:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 ft_write_c.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -261,6 +260,7 @@ libft/ft_strncmp.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 ft_isdigit.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -277,7 +277,6 @@ libft/ft_isalnum.c:
 
 all: libftprintf.a
 #  Command-line target.
- 
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
@@ -364,6 +363,7 @@ check_flag.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
+ 
 ft_tolower.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -372,7 +372,6 @@ ft_tolower.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
- 
 ft_strrchr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -431,6 +430,7 @@ libft/ft_strnstr.c:
 libft/ft_putstr_fd.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -442,8 +442,7 @@ ft_write_upperx.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-ft_strlcat.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_l 
-stlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
+ft_strlcat.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -469,7 +468,7 @@ process_raw_str.c:
 # Not a target:
 collect_format.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-22 20:34:22
+#  Last modified 2022-06-22 20:44:38
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -531,7 +530,7 @@ libft/ft_atoi.c:
 # Not a target:
 print_res_str.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-22 20:34:23
+#  Last modified 2022-06-22 20:37:13
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -552,6 +551,7 @@ libft/ft_strtrim.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 ft_striteri.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -560,7 +560,6 @@ ft_striteri.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c f
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
- 
 ft_bzero.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -634,6 +633,7 @@ bonus: libftprintf.a
 	make WITH_BONUS=1 $(NAME)
 	
 
+ 
 ft_putnbr_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -654,7 +654,6 @@ libft/ft_itoa.c:
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 check_width.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -741,13 +740,14 @@ libft/ft_memset.c:
 # Not a target:
 ft_printf.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-22 20:31:36
+#  Last modified 2022-06-22 20:47:38
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-ft_isalpha.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
+ft_isalpha.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_l 
+stlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -765,7 +765,6 @@ ft_lstsize.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 
 # Not a target:
 libft/ft_strlcat.c:
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -857,6 +856,7 @@ ft_strncmp.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 	
 
 re:
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -877,7 +877,6 @@ ft_isalnum.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  commands to execute (from `Makefile', line 46):
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
@@ -926,7 +925,8 @@ ft_lstdelone.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c 
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
-ft_memmove.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
+ft_memmove.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_l 
+stlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -946,7 +946,6 @@ ft_strchr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_
 ft_write_p.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-22 20:28:23
- 
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -991,6 +990,7 @@ ft_write_lowerx.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 	
 
 ft_strnstr.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1006,7 +1006,6 @@ ft_write_i.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
- 
 ft_putstr_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1068,7 +1067,8 @@ ft_write_upperx.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
-ft_atoi.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
+ft_atoi.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstl 
+ast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1081,7 +1081,6 @@ process_raw_str.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 46):
- 
 	$(CC) $(CFLAGS) -c $(SRC_FILES)
 	
 
@@ -1156,6 +1155,7 @@ libft/ft_strchr.c:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 ft_putendl_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c ft_write_per.c ft_write_s.c ft_write_u.c ft_write_lowerx.c ft_write_upperx.c check_flag.c check_precision.c check_specifier.c check_width.c process_raw_str.c collect_format.c print_res_str.c libft/ft_atoi.c libft/ft_bzero.c libft/ft_calloc.c libft/ft_isalnum.c libft/ft_isalpha.c libft/ft_isascii.c libft/ft_isdigit.c libft/ft_isprint.c libft/ft_itoa.c libft/ft_memchr.c libft/ft_memcmp.c libft/ft_memcpy.c libft/ft_memmove.c libft/ft_memset.c libft/ft_putchar_fd.c libft/ft_putendl_fd.c libft/ft_putnbr_fd.c libft/ft_putstr_fd.c libft/ft_split.c libft/ft_strchr.c libft/ft_strdup.c libft/ft_striteri.c libft/ft_strjoin.c libft/ft_strlcat.c libft/ft_strlcpy.c libft/ft_strlen.c libft/ft_strmapi.c libft/ft_strncmp.c libft/ft_strnstr.c libft/ft_strrchr.c libft/ft_strtrim.c libft/ft_substr.c libft/ft_tolower.c libft/ft_toupper.c libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1177,6 +1177,6 @@ ft_putendl_fd.o: ft_printf.c ft_write_c.c ft_write_d.c ft_write_i.c ft_write_p.c
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Jun 22 20:35:14 2022
+# Finished Make data base on Wed Jun 22 21:00:33 2022
 
  
