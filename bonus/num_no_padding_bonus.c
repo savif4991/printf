@@ -9,7 +9,7 @@
 /*   Updated: 2022/06/22 22:21:08 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 static void	zero_with_precision(struct s_info *p, unsigned int i)
 {

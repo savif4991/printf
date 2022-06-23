@@ -9,7 +9,7 @@
 /*   Updated: 2022/06/22 18:20:55 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 static char	*get_res(struct s_info *p, int slots)
 {

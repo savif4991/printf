@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_upperx.c                                  :+:      :+:    :+:   */
+/*   ft_write_lowerx.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 18:20:50 by daejlee           #+#    #+#             */
-/*   Updated: 2022/06/22 18:20:51 by daejlee          ###   ########.fr       */
+/*   Created: 2022/06/22 18:20:28 by daejlee           #+#    #+#             */
+/*   Updated: 2022/06/22 18:20:29 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "./ft_printf.h"
+#include "./ft_printf_bonus.h"
 
 static char	*get_res(unsigned int dig, unsigned long long val)
 {
@@ -28,12 +28,12 @@ static char	*get_res(unsigned int dig, unsigned long long val)
 	{
 		rem = val % 16;
 		val /= 16;
-		res[dig - i++] = "0123456789ABCDEF"[rem];
+		res[dig - i++] = "0123456789abcdef"[rem];
 	}
 	return (res);
 }
 
-char	*ft_write_upperx(va_list ap)
+char	*ft_write_lowerx(va_list ap)
 {
 	unsigned long long		val;
 	unsigned long long int	quo;

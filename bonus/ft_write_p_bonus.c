@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_lowerx.c                                  :+:      :+:    :+:   */
+/*   ft_write_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 18:20:28 by daejlee           #+#    #+#             */
-/*   Updated: 2022/06/22 18:20:29 by daejlee          ###   ########.fr       */
+/*   Created: 2022/06/22 18:20:33 by daejlee           #+#    #+#             */
+/*   Updated: 2022/06/22 18:20:34 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "./ft_printf.h"
+#include "./ft_printf_bonus.h"
 
 static char	*get_res(unsigned int dig, unsigned long long val)
 {
@@ -22,7 +22,7 @@ static char	*get_res(unsigned int dig, unsigned long long val)
 		return (0);
 	res[dig] = '\0';
 	if (!val)
-		res[0] = '0';
+		res[2] = '0';
 	i = 1;
 	while (val)
 	{
@@ -30,10 +30,12 @@ static char	*get_res(unsigned int dig, unsigned long long val)
 		val /= 16;
 		res[dig - i++] = "0123456789abcdef"[rem];
 	}
+	res[0] = '0';
+	res[1] = 'x';
 	return (res);
 }
 
-char	*ft_write_lowerx(va_list ap)
+char	*ft_write_p(va_list ap)
 {
 	unsigned long long		val;
 	unsigned long long int	quo;
@@ -47,5 +49,6 @@ char	*ft_write_lowerx(va_list ap)
 		quo /= 16;
 		dig++;
 	}
+	dig += 2;
 	return (get_res(dig, val));
 }

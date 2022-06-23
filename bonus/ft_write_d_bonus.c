@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_i.c                                       :+:      :+:    :+:   */
+/*   ft_write_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 18:20:23 by daejlee           #+#    #+#             */
-/*   Updated: 2022/06/22 18:20:25 by daejlee          ###   ########.fr       */
+/*   Created: 2022/06/22 18:20:15 by daejlee           #+#    #+#             */
+/*   Updated: 2022/06/22 18:20:19 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "./ft_printf_bonus.h"
 
-char	*ft_write_i(va_list ap)
+char	*ft_write_d(va_list ap)
 {
 	char	*str;
 	int		val;

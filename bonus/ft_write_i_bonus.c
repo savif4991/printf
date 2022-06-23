@@ -1,48 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_write_u.c                                       :+:      :+:    :+:   */
+/*   ft_write_i.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daejlee <daejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 18:20:45 by daejlee           #+#    #+#             */
-/*   Updated: 2022/06/22 18:20:48 by daejlee          ###   ########.fr       */
+/*   Created: 2022/06/22 18:20:23 by daejlee           #+#    #+#             */
+/*   Updated: 2022/06/22 18:20:25 by daejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ft_printf.h"
+#include "./ft_printf_bonus.h"
 
-static char	*ft_uitoa(unsigned int val)
+char	*ft_write_i(va_list ap)
 {
-	unsigned int	dig;
-	unsigned int	temp;
-	char			*str;
+	char	*str;
+	int		val;
 
-	temp = val;
-	dig = 1;
-	while (temp / 10)
-	{
-		temp /= 10;
-		dig++;
-	}
-	str = (char *)malloc(dig + 1);
+	val = va_arg(ap, int);
+	str = ft_itoa(val);
 	if (str == 0)
 		return (0);
-	str[dig] = '\0';
-	while (dig--)
-	{
-		str[dig] = val % 10 + '0';
-		val /= 10;
-	}
-	return (str);
-}
-
-char	*ft_write_u(va_list ap)
-{
-	char				*str;
-	unsigned int		val;
-
-	val = va_arg(ap, unsigned int);
-	str = ft_uitoa(val);
 	return (str);
 }
