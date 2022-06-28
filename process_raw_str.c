@@ -15,7 +15,7 @@ static char	*get_res(struct s_info *p, int slots)
 {
 	char	*res;
 
-	if ((ft_strchr(p->flag, '+') || ft_strchr(p->flag, ' '))
+	if ((ft_strchr(p->flag, '+') || ft_strchr(p->flag, ' ') && p->spc != 's')
 		&& p->raw_str[0] != '-')
 		slots++;
 	if (ft_strchr(p->flag, '#') && ft_strchr("xX", p->spc)

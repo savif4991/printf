@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "./ft_printf.h"
 
-static char	*get_res(unsigned int dig, unsigned long long val)
+static char	*get_res(unsigned int dig, unsigned int val)
 {
 	char			*res;
 	unsigned int	rem;
@@ -35,11 +35,11 @@ static char	*get_res(unsigned int dig, unsigned long long val)
 
 char	*ft_write_lowerx(va_list ap)
 {
-	unsigned long long		val;
-	unsigned long long int	quo;
-	unsigned int			dig;
+	unsigned int	val;
+	unsigned int	quo;
+	unsigned int	dig;
 
-	val = va_arg(ap, unsigned long long);
+	val = va_arg(ap, unsigned int);
 	quo = val;
 	dig = 1;
 	while (quo / 16)
